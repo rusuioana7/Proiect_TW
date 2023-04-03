@@ -1,0 +1,170 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Class
+{
+    width: 100% ;
+    height: 100vh ;
+    background-image: url(backgorund0.png) ;
+    background-position: center;
+    background-size: cover ;
+    padding-left: 2% ;
+    padding-right: 2% ;
+    box-sizing: border-box ;
+}
+
+.LoginClass
+{
+    font-size: 15px ;
+    color: aliceblue ;
+}
+
+body
+{
+    font-family: "Open Sans", sans-serif ;
+    color: #fff ;
+}
+
+section
+{
+    width: 100% ;
+    height: 100vh ;
+    background-image: url(background0.png) ;
+    background-position: center;
+    background-size: cover ;
+    padding-left: 0px ;
+    padding-right: 2% ;
+}
+
+.LoginClass{
+    position: absolute ;
+    top: 50% ;
+    left: 50% ;
+    transform: translate(-50% , -50%) ;
+    background: linear-gradient(rgba(0,0,0,0.1) , rgba(0,0,0,0.1) , rgba(0,0,0,0.1) , rgba(0,0,0,0.1)) ;
+    width: 380px ;
+    padding: 50px 30px ;
+    border-radius: 20px ;
+    box-shadow: 7px 7px 60px #000 ;
+}
+
+h1
+{
+    text-transform: uppercase ;
+    font-size: 2em ;
+    text-align: center ;
+    margin-bottom: 2em ;
+}
+
+.control input
+{
+    width: 100% ;
+    display: block ;
+    padding: 10px ;
+    color: black ;
+    border: none ;
+    outline: none ;
+    margin: 1em 0 ;
+}
+
+.control input[type = "submit"]
+{
+    background: peachpuff ;
+    color: aqua ;
+    text-transform: uppercase ;
+    font-size: 1.2em ;
+    opacity: .8;
+    transition: opacity .3s ease ;
+}
+
+.control input[type = "submit"]:hover
+{
+    opacity: 1 ;
+}
+
+.link
+{
+    text-align: center ;
+}
+
+.link a
+{
+    text-decoration: none ;
+    color: peachpuff ;
+    opacity: .8 ;
+    transition: opacity .3s ease ;
+}
+
+.link a:hover
+{
+    opacity: 1 ;
+}
+
+.button-box
+{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 10px 6px lightblue;
+    border-radius: 30px;
+}
+
+.toggle-btn
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: yellow;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn
+{
+    top: 0;
+    left: 110px;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #90ee90, #00ff00);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#login
+{
+    left: 50px;
+}
+
+#register
+{
+    left: 450px;
+}
+
+.span
+{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+.submit-btn
+{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #90ee90, #00ff00);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}

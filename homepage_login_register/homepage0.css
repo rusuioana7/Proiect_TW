@@ -1,0 +1,94 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    background: url("background0.png");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+header .navbar
+{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    color: white;
+    paddin-top: 20px;
+    font-family: cursive;
+    ;
+}
+
+header .navbar .logo
+{
+    font-size: 25px;
+}
+
+header .navbar .menu a
+{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 17px;
+    transition: 0.4s;
+}
+
+header .navbar .menu a:hover
+{
+    color: limegreen;
+    border-bottom: 1px solid green;
+}
+
+header .navbar .button a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: brown;
+    transition: 0.4s;
+}
+
+header .navbar .button a:hover
+{
+    background-color: transparent;
+    color: limegreen;
+    border: 1px solid green;
+}
+
+.caption
+{
+    margin-top: 60px;
+    color: white;
+    text-align: center;
+}
+
+.education
+{
+    color: lime;
+    margin-bottom: -50px;
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1
+{
+    font-size: 4em;
+    color: greenyellow;
+}
+
+p
+{
+    font-size: 20px;
+    margin-top: -30px;
+
+}
