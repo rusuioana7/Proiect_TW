@@ -1,0 +1,226 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-height: 80vh;
+}
+.header {
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/bck2.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: brightness(60%);
+    padding: 0;
+}
+h1 {
+    position: relative;
+    top: -90vh;
+    left: 40vw;
+    color: #00ff00;
+    font-size: 1em;
+    margin-top:0;
+    margin-left: 0;
+    max-width: 50vw;
+}
+.profil-pic {
+    position: absolute;
+    border-radius: 30%;
+    object-fit: cover;
+    width: 12vw;
+    margin-top: -89vh;
+    z-index: 1;
+    left: 25px;
+}
+.all {
+    position: absolute;
+    margin-top: -41vh;
+    color: #00f00f;
+    left: 10vw;
+    font-size: 1em;
+    width: 80%
+}
+.info-box {
+    background-color: #091836;
+    border: 2px solid #00F00F;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: -27px;
+}
+.email {
+    margin-bottom: 10px;
+    font-size: 2vw;
+}
+.nume {
+    margin-bottom: 10px;
+    font-size: 2vw;
+}
+.surnume {
+    margin-bottom: 10px;
+    font-size: 2vw;
+}
+.usernume {
+    margin-bottom: 10px;
+    font-size: 2vw;
+}
+.change {
+    margin-bottom: 10px;
+    font-size: 2vw;
+}
+.confirm {
+    margin-bottom: 10px;
+    font-size: 2vw;
+}
+.form-control {
+    width: 18vw;
+    height: auto;
+}
+.select-country {
+    color: #00F00F;
+    font-size: 2vw;
+    height: auto;
+}
+#country-select option {
+    font-size: 1em;
+    padding: 10px;
+    height: 20px;
+}
+#country-select {
+    font-size: 0.5em;
+    padding: 3px;
+    height: auto;
+    width: 18vw;
+}
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50vh;
+    right: 1vw;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding: 5px 5px;
+    transition: 0.5s;
+    background-color: #00F00F;
+    border: none;
+    color: #091834;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1;
+}
+a:hover {
+    letter-spacing: 0.15px;
+    background: var(--clr);
+    color: var(--clr);
+    box-shadow: 0 0 10px var(--clr);
+}
+a::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: #7ce8ab;
+    border-radius: 10px;
+}
+a span {
+    position: relative;
+    z-index: 1;
+}
+a i {
+    position: absolute;
+    inset: 0.5px;
+    display: block;
+}
+a i::before {
+    content: '';
+    position: absolute;
+    border: 2px solid var(--clr);
+    background: #00ff00;
+    transition: 1s;
+    left: 80%;
+    width: 10px;
+    height: 2px;
+    top: -3.5px;
+    transition: 0.5s;
+    transform: translateX(-50%);
+}
+a:hover i::before {
+    width: 20px;
+    left: 20%;
+}
+a i::after {
+    content: '';
+    position: absolute;
+    border: 2px solid var(--clr);
+    background: #00ff00;
+    transition: 1s;
+    left: 20%;
+    width: 10px;
+    height: 2px;
+    bottom: -3.5px;
+    transition: 0.5s;
+    transform: translateX(-50%);
+}
+a:hover i::after {
+    width: 20px;
+    left: 80%;
+}
+b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 59vh;
+    right: 1vw;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding: 5px 5px;
+    background-color: #00F00F;
+    border: none;
+    color: #091834;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+}
+b:hover{
+    background-color: red;
+    color: #00F00F;
+}
+@media (min-width: 768px) {
+    h1{
+        font-size: 2em;
+    }
+    .all{
+        font-size: 1.3em;
+    }
+    a{
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1024px){
+    h1{
+        font-size: 2.5em;
+    }
+    .all{
+        font-size: 1.5em;
+    }
+    a{
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 768px) {
+    .form-control {
+        height: auto;
+    }
+}
