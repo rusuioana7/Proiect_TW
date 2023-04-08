@@ -4,11 +4,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
-    background-color: #091836;
+    background-image: url("../../homepage_login_register/background0.png");
+    background-size: cover;
+    background-position: center;
 }
 
 header {
-    background-color: #091836;
+
     width: 100%;
     height: 100vh;
     background-size: cover;
@@ -46,6 +48,7 @@ header .navbar {
 header .navbar .logo {
     margin-top: 20px;
     font-size: 25px;
+    color: transparent;
 }
 
 @media (max-width: 767px) {
@@ -293,32 +296,32 @@ body .information {
 }
 
 .select-country {
-    color:#00FF00;
+    color: #00FF00;
     font-size: 1.2em;
 }
 
 #country-select {
     background-color: #091836;
     padding: 0.2em;
-    color:#00FF00;
+    color: #00FF00;
     margin-left: 10px;
     font-family: 'Josefin Sans', sans-serif;
-    
+
 }
 
 .select-year {
     margin-left: 2em;
-    color:#00FF00;
+    color: #00FF00;
     font-size: 1.2em;
 }
 
 #year-select {
     background-color: #091836;
     padding: 0.2em;
-    color:#00FF00;
+    color: #00FF00;
     margin-left: 10px;
     font-family: 'Josefin Sans', sans-serif;
-    
+
 }
 
 

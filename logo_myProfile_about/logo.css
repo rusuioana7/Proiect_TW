@@ -1,69 +1,75 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container{
+
+.container {
     width: 100%;
-    height:100vh;
-    background:#091836 ;
+    height: 100vh;
+    background: #091836;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.nume{
+
+.nume {
     content: '';
     position: absolute;
     width: 270px;
     height: 270px;
-    background:radial-gradient(ellipse at top , #68cce5,transparent),
-    radial-gradient(ellipse at bottom, #4585ee,transparent);
+    background: radial-gradient(ellipse at top, #68cce5, transparent),
+        radial-gradient(ellipse at bottom, #4585ee, transparent);
     border: 7px solid white;
     z-index: 1;
     overflow: hidden;
 }
-.nume::before{
+
+.nume::before {
     content: '';
     position: absolute;
     top: -50%;
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(50deg, transparent,transparent,#3f4dde,#9ff8ac, #3f4dde );
-    z-index:1;
+    background: linear-gradient(50deg, transparent, transparent, #3f4dde, #9ff8ac, #3f4dde);
+    z-index: 1;
     transform-origin: bottom right;
     animation: animate 20s linear infinite;
 
 }
+
 @keyframes animate {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
-        transform:rotate(360deg) ;
+
+    100% {
+        transform: rotate(360deg);
     }
 }
 
-.nume::after{
+.nume::after {
     content: '';
     position: absolute;
     top: -50%;
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(50deg, transparent,transparent, #3f4dde, #9ff8ac, #21e34c);
-    z-index:1;
+    background: linear-gradient(50deg, transparent, transparent, #3f4dde, #9ff8ac, #21e34c);
+    z-index: 1;
     transform-origin: bottom right;
     animation: animate 20s linear infinite;
     animation-delay: -30s;
 }
-.borderline{
+
+.borderline {
     position: absolute;
     top: 0;
     inset: 0;
 }
 
-.nume-inner{
+.nume-inner {
     width: 200px;
     height: 200px;
     text-align: center;
@@ -72,11 +78,11 @@
     letter-spacing: 3px;
     text-size-adjust: auto;
     font-family: sans-serif, "Britannic Bold", "Lucida Bright";
-    color:white;
+    color: white;
     float: bottom;
 }
 
-.circle{
+.circle {
 
     position: relative;
     margin-right: -75px;
@@ -84,8 +90,9 @@
     margin-top: 10px;
 
 }
+
 .circle::before,
-.circle::after{
+.circle::after {
     content: '';
     width: 43px;
     height: 80px;
@@ -95,33 +102,39 @@
     margin-top: -50px;
 
 }
-.circle::before{
+
+.circle::before {
     left: -50px;
     margin-left: 10px;
 
 }
-.circle::after{
+
+.circle::after {
     right: -110px;
     margin-right: 25px;
 }
-.circle::before{
-    animation: sparkle 20s linear infinite ;
+
+.circle::before {
+    animation: sparkle 20s linear infinite;
 }
-.circle::after{
-    animation: sparkle 20s linear  infinite ;
+
+.circle::after {
+    animation: sparkle 20s linear infinite;
 }
 
 @keyframes sparkle {
-    0%{
+    0% {
         opacity: 0.5;
         transform: scale(1);
     }
-    50%{
+
+    50% {
         opacity: 1;
         transform: scale(1.2);
     }
-    100%{
+
+    100% {
         opacity: 0.5;
-        transform:  scale(1);
+        transform: scale(1);
     }
 }

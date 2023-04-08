@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name = "viewport" content = "width = device - width , initial - scale = 1.0">
+    <meta name="viewport" content="width = device - width , initial - scale = 1.0">
     <title>LogIn</title>
-    <link rel = "stylesheet" href = "loginstyle0.css">
+    <link rel="stylesheet" href="loginstyle0.css">
 
 </head>
 
 <body>
-<section>
-    <div class = "Class" >
-        <div class = "LoginClass" >
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="">Log In</button>
-                <button type="button" class="toggle-btn" onclick="location.href='register.html'">Register</button>
+    <section>
+        <div class="Class">
+            <div class="LoginClass">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="location.href='register.html'">Register</button>
+                </div>
+                <form id="login" action="../homepage_login_register/homepage0.html">
+                    <div class="control">
+                        <input type="text" class="input-field" placeholder="User ID" required>
+                        <input type="password" class="input-field" placeholder="Enter Password" required>
+                    </div>
+                    <span><input type="checkbox"> Remember password</span>
+                    <div class="control">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="link">
+                        <a href="#"> Forgot password ? </a>
+                    </div>
+                </form>
             </div>
-            <form id="login" action= "#" >
-                <div class = "control" >
-                    <input type="text" class="input-field" placeholder="User ID" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" required>
-                </div>
-                <span><input type = "checkbox" > Remember password</span>
-                <div class = "control" >
-                    <input type = "submit" value = "Login" >
-                </div>
-                <div class = "link" >
-                    <a href = "#" > Forgot password ? </a>
-                </div>
-            </form>
         </div>
-    </div>
-</section>
+    </section>
 </body>
+
 </html>
