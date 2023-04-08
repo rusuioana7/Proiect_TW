@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #091836;
+}
+
+header {
+    background-color: #091836;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+
+
+header .navbar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+@media (max-width: 767px) {
+    .header .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+        padding: 10px;
+    }
+}
+
+/* Media query for screens larger than 768px */
+@media (min-width: 768px) {
+    .header .navbar {
+        height: 80px;
+    }
+}
+
+header .navbar .logo {
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+@media (max-width: 767px) {
+    .header .navbar .logo {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+}
+
+/* Media query for screens larger than 768px */
+@media (min-width: 768px) {
+    .header .navbar .logo {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+}
+
+header .navbar .menu a {
+    color: #00FF00;
+    font-size: 20px;
+    text-decoration-line: none;
+    padding: 6px 15px;
+    font-weight: 600;
+    background-color: #00008B;
+    border-radius: 3px;
+}
+
+header .navbar .menu a i {
+    margin-top: 20px;
+}
+
+header .navbar .menu a span {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+header .navbar .menu a:hover {
+    background-color: #00FF00;
+    color: #00008B;
+    transition: 0.5s;
+}
+
+
+
+header .navbar .button a {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+
+
+    color: white;
+    font-size: 17px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: brown;
+    transition: 0.4s;
+}
+
+header .navbar .button a:hover {
+    background-color: transparent;
+    color: limegreen;
+    border: 1px solid green;
+}
+
+@media (max-width: 767px) {
+    .header .navbar .menu a {
+        font-size: 16px;
+        padding: 4px 10px;
+    }
+
+    .header .navbar .menu a i {
+        margin-top: 10px;
+    }
+
+    .header .navbar .menu a span {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .header .navbar .button a {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Media query for screens larger than 768px */
+@media (min-width: 768px) {
+    .header .navbar .menu a {
+        font-size: 20px;
+        padding: 6px 15px;
+    }
+
+    .header .navbar .menu a i {
+        margin-top: 20px;
+    }
+
+    .header .navbar .menu a span {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    .header .navbar .button a {
+        margin-top: 20px;
+        font-size: 17px;
+        padding: 10px 20px;
+    }
+}
+
+
+/* Default styles */
+h1 {
+    font-size: 3em;
+    color: #00FF00;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2em;
+        margin-top: 10px;
+    }
+}
+
+/* Media query for screens larger than 768px */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3em;
+        margin-top: 20px;
+    }
+}
+
+
+/* Default styles */
+body .information {
+    margin-top: -500px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 50px;
+    background-color: #00008B;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    color: #00FF00;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.text {
+    color: #00FF00;
+    font-weight: lighter;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.space {
+    height: 20px;
+}
+
+.choosefilter {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 2.5%;
+    margin-right: 2.4%;
+    padding: 20px;
+    background-color: #00008B;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    text-align: left;
+    color: #00FF00;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 767px) {
+    body .information {
+        margin: -500px 40px 20px 40px;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.2em;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .choosefilter {
+        margin: 0px 40px 20px 40px;
+        padding: 20px;
+
+    }
+
+    .filter {
+        font-size: 1.2em;
+    }
+}
+
+/* Media query for screens larger than 768px */
+@media (min-width: 768px) {
+    body .information {
+        margin: -450px 40px 20px 40px;
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    .choosefilter {
+        margin: 0px 40px 20px 40px;
+        padding: 30px;
+    }
+
+    .filter {
+        font-size: 1.5em;
+    }
+}
+
+
+.select-menu-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.select-country {
+    color:#00FF00;
+    font-size: 1.2em;
+}
+
+#country-select {
+    background-color: #091836;
+    padding: 0.2em;
+    color:#00FF00;
+    margin-left: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+.select-year {
+    margin-left: 2em;
+    color:#00FF00;
+    font-size: 1.2em;
+}
+
+#year-select {
+    background-color: #091836;
+    padding: 0.2em;
+    color:#00FF00;
+    margin-left: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+
+
+
+
+/* Medium devices (576px - 992px) */
+@media (min-width: 576px) and (max-width: 992px) {
+    .select-menu .select-button {
+        font-size: 18px;
+        margin-right: 20px;
+    }
+
+    .option .option-text {
+        font-size: 18px;
+    }
+}
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) {
+    .select-menu-container {
+        flex-direction: row;
+    }
+
+    .select-menu {
+        margin: 50px auto;
+
+    }
+
+    .select-menu .select-button {
+        font-size: 20px;
+        padding: 15px 20px;
+        margin-right: 10px;
+    }
+
+    .option .option-text {
+        font-size: 20px;
+    }
+}
+
+
+.chooseformat {
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 50px;
+    background-color: #00008B;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+.format {
+    text-align: left;
+    color: #00FF00;
+    font-weight: Bold;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-left: 10px;
+
+}
+
+@media (max-width: 767px) {
+
+    .chooseformat {
+        margin: 0px 40px 20px 40px;
+        padding: 20px;
+
+    }
+
+    .format {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .chooseformat {
+        margin: 0px 40px 20px 40px;
+        padding: 10px;
+    }
+
+    .format {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+    }
+}
+
+
+.content {
+    width: 300px;
+    height: 10px;
+    margin: 50px auto;
+    margin-top: -10px;
+}
+
+.content .generate {
+    display: flex;
+    height: 20px;
+    background: #091836;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: lighter;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    color: #00FF00;
+    flex-direction: row-reverse;
+
+}
+
+.content label {
+    color: #00FF00;
+    user-select: none;
+    padding-left: 5px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+
+}
+
+@media screen and (max-width: 900px) {
+    .content {
+        width: 95%;
+        margin-bottom: 20px;
+    }
+
+    .content .generate {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .content label {
+        font-size: 14px;
+    }
+}

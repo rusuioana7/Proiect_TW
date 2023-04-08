@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styling/comparison-main.css">
+    <script src="https://kit.fontawesome.com/035860ecaf.js"></script>
+    <title>ComparisonPage</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Logo</div>
+            <div class="menu">
+                <a href="../../homepage_login_register/homepage0.html"><i class="fas fa-house"></i><span>Home<span></a>
+                <a href="#"><i class="fas fa-user"></i><span>My Profile</span></a>
+                <a href="../../statistics/pages/statistics-main.html"><i
+                        class="fas fa-chart-simple"></i><span>Statistics</span></a>
+                <a href="../pages/comparison-main.html"><i class="fas fa-not-equal"></i><span>Comparison</span></a>
+            </div>
+            <div class="button">
+                <a href='login0.html'>Log Out</a>
+            </div>
+        </div>
+
+        <h1>Obesity Visualizer</h1>
+
+
+    </header>
+    <div class="information">
+
+        <h2 class="title">Obesity Rate Comparison</h2>
+
+        <p class="text">
+            Create different comparisons.</p>
+
+
+    </div>
+    <div class="space"></div>
+
+    <div class="choosefilter">
+
+        <h3 class="filter">Option 1:</h3>
+
+
+        <div class="select-menu-container">
+            <div class="select-country">
+                <label class="labels>">Select Country:</label>
+            </div>
+            <section id="country">
+                <select id="country-select">
+                    <option>Albania</option>
+                    <option value="Austria">Andora</option>
+                    <option value="Albania">Belarus</option>
+                    <option value="Austria">Belgium</option>
+                    <option value="Albania">Croatia</option>
+                    <option value="Austria">Cyprus</option>
+                    <option value="Albania">Denmark</option>
+                    <option value="Austria">Estonia</option>
+                    <option value="Albania">Finland</option>
+                    <option value="Austria">Georgia</option>
+                    <option value="Albania">Hungary</option>
+                    <option value="Austria">Iceland</option>
+                    <option value="Albania">Kosovo</option>
+                    <option value="Austria">Lithuania</option>
+                    <option value="Albania">Moldova</option>
+                    <option value="Austria">Netherlands</option>
+                    <option value="Albania">Poland</option>
+                    <option value="Austria">Romania</option>
+                    <option value="Albania">Serbia</option>
+                    <option value="Austria">Spain</option>
+                    <option value="Albania">Turkey</option>
+                    <option value="Austria">Ukraine</option>
+                    <option value="Albania">Vatican City</option>
+                </select>
+                <div id="chart"></div>
+            </section>
+
+            <div class="select-year">
+                <label class="labels>">Select Year:</label>
+            </div>
+            <section id="year">
+                <select id="year-select">
+                    <option value="All years available">All years available</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2014">2014</option>
+
+                </select>
+                <div id="chart"></div>
+            </section>
+        </div>
+    </div>
+
+    <div class="choosefilter">
+
+        <h3 class="filter">Option 2:</h3>
+
+
+        <div class="select-menu-container">
+            <div class="select-country">
+                <label class="labels>">Select Country:</label>
+            </div>
+            <section id="country">
+                <select id="country-select">
+                    <option>Albania</option>
+                    <option value="Austria">Andora</option>
+                    <option value="Albania">Belarus</option>
+                    <option value="Austria">Belgium</option>
+                    <option value="Albania">Croatia</option>
+                    <option value="Austria">Cyprus</option>
+                    <option value="Albania">Denmark</option>
+                    <option value="Austria">Estonia</option>
+                    <option value="Albania">Finland</option>
+                    <option value="Austria">Georgia</option>
+                    <option value="Albania">Hungary</option>
+                    <option value="Austria">Iceland</option>
+                    <option value="Albania">Kosovo</option>
+                    <option value="Austria">Lithuania</option>
+                    <option value="Albania">Moldova</option>
+                    <option value="Austria">Netherlands</option>
+                    <option value="Albania">Poland</option>
+                    <option value="Austria">Romania</option>
+                    <option value="Albania">Serbia</option>
+                    <option value="Austria">Spain</option>
+                    <option value="Albania">Turkey</option>
+                    <option value="Austria">Ukraine</option>
+                    <option value="Albania">Vatican City</option>
+                </select>
+                <div id="chart"></div>
+            </section>
+
+            <div class="select-year">
+                <label class="labels>">Select Year:</label>
+            </div>
+            <section id="year">
+                <select id="year-select">
+                    <option value="All years available">All years available</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2014">2014</option>
+
+                </select>
+                <div id="chart"></div>
+            </section>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="chooseformat">
+
+        <h3 class="format">Choose format:</h3>
+
+
+        <div class="select-menu-container">
+
+
+            <div class="select-menu">
+
+
+                <div class="content">
+
+                    <div class="generate">
+                        <a href="comparison-generate-table.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <label for="table"> Generate Table</label>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="select-menu">
+                <div class="content">
+                    <div class="generate">
+                        <a href="comparison-generate-line.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <label for="line"> Generate Line</label>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="select-menu">
+                <div class="content">
+                    <div class="generate">
+                        <a href="comparison-generate-bar.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <label for="Bar"> Generate Bar</label>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="select-menu">
+                <div class="content">
+                    <div class="generate">
+                        <a href="comparison-generate-map.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <label for="Map"> Generate Map</label>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
