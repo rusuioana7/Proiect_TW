@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="statistics-generate-map.css">
+    <link rel="stylesheet" href="../styling/comparison-generate-map.css">
     <script src="https://kit.fontawesome.com/035860ecaf.js"></script>
     <title>StatisticsPage</title>
 </head>
@@ -14,11 +14,11 @@
         <div class="navbar">
             <div class="logo">Logo</div>
             <div class="menu">
-                <a href="../homepage_login_register/homepage0.html"><i class="fas fa-house"></i><span>Home<span></a>
+                <a href="../../homepage_login_register/homepage0.html"><i class="fas fa-house"></i><span>Home<span></a>
                 <a href="#"><i class="fas fa-user"></i><span>My Profile</span></a>
-                <a href="../statistics/statistics-main.html"><i
+                <a href="../../statistics/pages/statistics-main.html"><i
                         class="fas fa-chart-simple"></i><span>Statistics</span></a>
-                <a href="#"><i class="fas fa-not-equal"></i><span>Comparison</span></a>
+                <a href="../pages/comparison-main.html"><i class="fas fa-not-equal"></i><span>Comparison</span></a>
             </div>
             <div class="button">
                 <a href='login0.html'>Log Out</a>
@@ -36,37 +36,35 @@
         <p class="text">
             Format: Map</p>
         <p class="text">
-            Region: Belgium</p>
+            Option 1: Belgium</p>
         <p class="text">
-            Year: 2017</p>
+            Option 2: Romania</p>
+        <p class="text">
+            Year: 2019</p>
 
 
     </div>
     <div class="table">
-        <img src="../statistics/images/map-belgium-2017.png" alt="map-belgium-2017">
+        <img src="../images/map-belgium-romania-2019.png" alt="map-belgium-romania-2019">
     </div>
     <div class="select-menu-container">
-        <div class="select-menu">
-            <div class="select-button">
-                <span class="button-text">Export format</span>
-                <i class="fa-sharp fa-solid fa-caret-down"></i>
-                <ul class="options">
-                    <li class="option">
-                        <span class="CSV"></span>
-                    </li>
-                    <li class="option">
-                        <span class="WebP"></span>
-                    </li>
-                    <li class="option">
-                        <span class="SVG"></span>
-                    </li>
-                </ul>
-            </div>
+        <div class="select-format">
+            <label class="labels>">Export format:</label>
         </div>
+        <section id="format">
+            <select id="format-select">
+                <option value="CSV">CSV</option>
+                <option value="WebP">WebP</option>
+                <option value="SVG">SVG</option>
+
+            </select>
+            <div id="chart"></div>
+        </section>
+
         <div class="select-menu">
             <div class="select-button">
                 <span class="button-text">Export Map</span>
-                <i class="fa-solid fa-download"></i>                
+                <i class="fa-solid fa-download"></i>
             </div>
         </div>
     </div>

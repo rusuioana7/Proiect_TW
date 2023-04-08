@@ -144,6 +144,44 @@ img {
     width: 50%;
     background-color: #00008B;
 }
+
+/* Media query for screens larger than 768px */
+@media (min-width: 768px) {
+    .body .information {
+        margin: 50px 100px;
+        padding: 50px;
+    }
+
+    .table {
+        height: 400px;
+        margin: 50px 100px;
+        padding: 10px;
+    }
+
+    img {
+        width: 60%;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .body .information {
+        margin: 50px 100px;
+        padding: 50px;
+    }
+
+    .table {
+        height: 400px;
+        margin: 50px 100px;
+        padding: 10px;
+    }
+
+    img {
+        width: 70%;
+        margin: 10px;
+    }
+}
+
 .select-menu-container {
     display: flex;
     margin-bottom: 50px;
@@ -216,4 +254,65 @@ img {
 .option .option-text {
     font-size: 18px;
     color: #00FF00;
+}
+
+@media (max-width: 768px) {
+    .select-menu-container {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .select-menu {
+        width: 90%;
+    }
+
+    .select-menu .options {
+        padding: 10px;
+    }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 480px) {
+    .select-menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .select-menu {
+        width: 90%;
+        margin: 20px 0;
+        margin-right: 10px;
+    }
+
+    .select-menu .select-button {
+        font-size: 18px;
+        padding: 15px;
+        margin-right: 10px;
+    }
+
+    .options .option {
+        height: 80px;
+        padding: 0 10px;
+    }
+
+    .option .option-text {
+        font-size: 16px;
+    }
+}
+
+.select-format {
+    margin-left: 2em;
+    margin-top: 0.2em;
+    color:#00FF00;
+    font-size: 1.5em;
+}
+
+#format-select {
+    background-color: #091836;
+    padding: 0.2em;
+    color:#00FF00;
+    margin-left: 10px;
+    font-size: 1.5em;
+    font-family: 'Josefin Sans', sans-serif;
+    
 }
