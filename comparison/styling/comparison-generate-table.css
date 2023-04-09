@@ -18,7 +18,7 @@ header {
 
 header .navbar {
     width: 100%;
-    height: 100px;
+    height: 6.25em;
     display: flex;
     text-align: center;
     justify-content: space-around;
@@ -27,29 +27,47 @@ header .navbar {
 
 }
 
+@media (max-width: 767px) {
+    .header .navbar {
+
+        height: auto;
+        justify-content: center;
+        padding: 0.6250em;
+
+    }
+}
+
+
+@media (min-width: 768px) {
+    .header .navbar {
+        height: 5em;
+
+    }
+}
+
 header .navbar .logo {
-    margin-top: 20px;
-    font-size: 25px;
+    margin-top: 1.25em;
+    font-size: 1.4em;
     color: transparent;
 }
 
 header .navbar .menu a {
     color: #00FF00;
-    font-size: 20px;
+    font-size: 1.25em;
     text-decoration-line: none;
-    padding: 6px 15px;
+    padding: 0.375em 0.9375em;
     font-weight: 600;
     background-color: #00008B;
-    border-radius: 3px;
+    border-radius: 0.18em;
 }
 
 header .navbar .menu a i {
-    margin-top: 20px;
+    margin-top: 1.25em;
 }
 
 header .navbar .menu a span {
-    font-size: 20px;
-    margin-left: 10px;
+    font-size: 1.25em;
+    margin-left: 0.625em;
 }
 
 header .navbar .menu a:hover {
@@ -60,56 +78,121 @@ header .navbar .menu a:hover {
 
 
 
-header .navbar .button a {
+header .navbar .button {
     text-decoration: none;
     text-align: center;
-    margin-top: 20px;
-
-
+    margin-top: 1vh;
     color: white;
-    font-size: 17px;
+    font-size: 1em;
     border: 1px solid white;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 0.625em 1.25em;
     background-color: brown;
     transition: 0.4s;
+    max-height: 2vh;
+    min-width: 5vw;
+    flex-basis: calc(10% - 1.25em);
+    margin-right: 0.1em;
+    width: 20vw;
 }
 
-header .navbar .button a:hover {
+.button a {
+    font-size: 0.5em;
+    color: #00F00F;
+}
+
+header .navbar .button:hover {
     background-color: transparent;
     color: limegreen;
     border: 1px solid green;
+}
+
+@media (max-width: 767px) {
+    .header .navbar .menu a {
+        font-size: 1em;
+        padding: 0.25em 0.625em;
+    }
+
+    .header .navbar .menu a i {
+        margin-top: 0.625em;
+    }
+
+    .header .navbar .menu a span {
+        font-size: 1em;
+        margin-left: 1em;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .header .navbar .menu a {
+        font-size: 1.25em;
+        padding: 0.37em 0.93em;
+    }
+
+    .header .navbar .menu a i {
+        margin-top: 1.25em;
+    }
+
+    .header .navbar .menu a span {
+        font-size: 1.25em;
+        margin-left: 0.625em;
+    }
+
+    a {
+        font-size: 1em;
+    }
+
+    .button a {
+        font-size: 1em;
+    }
+
+
 }
 
 
 h1 {
     font-size: 3em;
     color: #00FF00;
-    margin-top: 20px;
+    margin-top: 1.25em;
     text-align: center;
 }
 
-body .information {
-    margin-top: -500px;
-    margin-left: 40px;
-    margin-right: 40px;
-    padding: 50px;
-    background-color: #00008B;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
 
-    padding: 10px;
-    margin-bottom: 20px;
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2em;
+        margin-top: 2em;
+    }
+}
+
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3em;
+        margin-top: 1.25em;
+    }
+}
+
+
+body .information {
+    margin-top: -31em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    padding: 3.625em;
+    background-color: #00008B;
+    border-radius: 0.93em;
+    padding: 0.625em;
+    margin-bottom: 1.25em;
 
 }
 
 .title {
-
+    position: relative;
     text-align: center;
     color: #00FF00;
-    font-weight: Bold;
+    font-weight: bold;
     font-size: 1.5em;
     margin-top: 0;
 }
@@ -117,22 +200,22 @@ body .information {
 .text {
 
     color: #00FF00;
-    font-weight: Light;
-    font-size: 20px;
-    text-align: left;
-    margin-bottom: 10px;
+    font-weight: lighter;
+    font-size: 1.25em;
+    text-align: center;
+    margin-bottom: 0;
 }
 
 .table {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 18.7em;
     background-color: #00008B;
-    padding: 5px;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 50px;
+    padding: 0.37em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    margin-bottom: 3.1em;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -148,91 +231,90 @@ img {
     background-color: #00008B;
 }
 
-/* Media query for screens smaller than 768px */
+
 @media (max-width: 767px) {
     .body .information {
-        margin: 20px;
-        padding: 20px;
+        margin: -31em 2.5em 1.25em 2.5em;
+        padding: 1.25em;
     }
 
     .table {
-        height: 200px;
-        margin: 20px;
-        padding: 5px;
+        height: 12.5em;
+        margin: 1.25em;
+        padding: 0.3em
     }
 
     img {
         width: 100%;
-        margin: 10px;
+        margin: 0.625em;
     }
 }
 
-/* Media query for screens larger than 768px */
+
 @media (min-width: 768px) {
     .body .information {
-        margin: 50px 100px;
-        padding: 50px;
+        margin: 3.1em 6.2em;
+        padding: 3.1em;
     }
 
     .table {
-        height: 400px;
-        margin: 50px 100px;
-        padding: 10px;
+        height: 25em;
+        margin: 3.1em 6.2em;
+        padding: 0.625em;
     }
 
     img {
         width: 70%;
-        margin: 20px;
+        margin: 1.25em;
     }
 }
 
 @media (max-width: 767px) {
     .body .information {
-        margin: 50px 100px;
-        padding: 50px;
+        margin: 3.1em 6.2em;
+        padding: 3.1em;
     }
 
     .table {
-        height: 400px;
-        margin: 50px 100px;
-        padding: 10px;
+        height: 25em;
+        margin: 3.1em 6.2em;
+        padding: 0.625em;
     }
 
     img {
         width: 100%;
-        margin: 20px;
+        margin: 1.25em;
     }
 }
 
 .select-menu-container {
     display: flex;
-    margin-bottom: 50px;
-    margin-left: 700px;
+    margin-bottom: 3.1em;
+    margin-left: 43.7em;
 }
 
 .select-menu {
-    width: 300px;
-    height: 10px;
-    margin: 50px auto;
-    margin-top: -10px;
-    margin-bottom: 50px;
+    width: 18.7em;
+    height: 0.625em;
+    margin: 3.1em auto;
+    margin-top: -0.625em;
+    margin-bottom: 3.1em;
 
 
 }
 
 .select-menu .select-button {
     display: flex;
-    height: 20px;
+    height: 1.25em;
     background: #00FF00;
-    padding: 20px;
-    font-size: 22px;
-
+    padding: 1.25em;
+    font-size: 1.25em;
     border-radius: 8px;
     align-items: center;
     cursor: pointer;
     justify-content: space-between;
     color: #091836;
-    margin-bottom: 10px;
+    margin-bottom: 0.625em;
     flex-direction: row-reverse;
 
     bottom: 0;
@@ -242,14 +324,14 @@ img {
 }
 
 .select-button i {
-    font-size: 25px;
+    font-size: 1.3em;
     transition: 0.3s;
 }
 
 .select-menu .options {
     position: relative;
-    padding: 20px;
-    margin-top: 10px;
+    padding: 1.25em;
+    margin-top: 0.625em;
     border-radius: 8px;
     background: #091836;
 
@@ -262,9 +344,9 @@ img {
 
 .options .option {
     display: flex;
-    height: 100px;
+    height: 6.2em;
     cursor: pointer;
-    padding: 0 16px;
+    padding: 0 1em;
     border-radius: 8px;
     align-items: center;
     background: #091836;
@@ -275,14 +357,14 @@ img {
 }
 
 .option .option-text {
-    font-size: 18px;
+    font-size: 1.2em;
     color: #00FF00;
 }
 
 @media (max-width: 768px) {
     .select-menu-container {
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 6.2em;
+        margin-right: 6.2em;
     }
 
     .select-menu {
@@ -290,11 +372,11 @@ img {
     }
 
     .select-menu .options {
-        padding: 10px;
+        padding: 0.625em;
     }
 }
 
-/* Responsive styles for mobile devices */
+
 @media (max-width: 480px) {
     .select-menu-container {
         flex-direction: column;
@@ -303,23 +385,23 @@ img {
 
     .select-menu {
         width: 90%;
-        margin: 20px 0;
-        margin-right: 10px;
+        margin: 1.25em 0;
+        margin-right: 0.625em;
     }
 
     .select-menu .select-button {
-        font-size: 18px;
-        padding: 15px;
-        margin-right: 10px;
+        font-size: 1.125em;
+        padding: 0.93em;
+        margin-right: 0.625em;
     }
 
     .options .option {
-        height: 80px;
-        padding: 0 10px;
+        height: 5em;
+        padding: 0 0.625em;
     }
 
     .option .option-text {
-        font-size: 16px;
+        font-size: 1em;
     }
 }
 
@@ -334,7 +416,7 @@ img {
     background-color: #091836;
     padding: 0.2em;
     color: #00FF00;
-    margin-left: 10px;
+    margin-left: 0.625em;
     font-size: 1.5em;
     font-family: 'Josefin Sans', sans-serif;
 

@@ -11,16 +11,19 @@ header {
     min-height: 100vh;
     background-position: center;
     position: relative;
-    padding:0;
-    overflow-x:hidden;
+    padding: 0;
+    overflow-x: hidden;
 }
+
 .menu {
     font-size: 0.5em;
 }
-.menu a{
+
+.menu a {
     flex-basis: calc(25% - 20px);
     margin-right: 0.5em;
 }
+
 .navbar {
     width: 100%;
     display: flex;
@@ -30,6 +33,28 @@ header {
     font-family: 'Josefin Sans', sans-serif;
     margin-top: 2vh;
 }
+
+header .navbar .logo {
+    margin-top: 1.25em;
+    font-size: 1.5em;
+    color: transparent;
+}
+
+@media (max-width: 767px) {
+    .header .navbar .logo {
+        margin-top: 0.625em;
+        font-size: 1.25em;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .header .navbar .logo {
+        margin-top: 1.25em;
+        font-size: 1.5em;
+    }
+}
+
 header .navbar .menu a {
     color: #00FF00;
     font-size: 1em;
@@ -38,18 +63,21 @@ header .navbar .menu a {
     font-weight: 600;
     background-color: #00008B;
     border-radius: 3px;
-    margin-top:0;
+    margin-top: 0;
     margin-left: 0;
 }
+
 header .navbar .menu a span {
     font-size: 1.3em;
     margin-left: 0.5em;
 }
+
 header .navbar .menu a:hover {
     background-color: #00FF00;
     color: #00008B;
     transition: 0.5s;
 }
+
 @media (max-width: 767px) {
     .header .navbar {
         flex-wrap: wrap;
@@ -59,7 +87,7 @@ header .navbar .menu a:hover {
     }
 }
 
-.button  {
+.button {
     text-decoration: none;
     text-align: center;
     margin-top: 1vh;
@@ -77,11 +105,13 @@ header .navbar .menu a:hover {
     width: 20vw;
 
 }
+
 .button a {
     font-size: 0.5em;
     color: #00F00F;
 }
-header .navbar .button a:hover {
+
+header .navbar .button:hover {
     background-color: transparent;
     color: limegreen;
     border: 1px solid green;
@@ -113,32 +143,39 @@ p {
     color: #00F00F;
 
 }
-@media screen and (max-width: 805px){
-    .menu a{
+
+@media screen and (max-width: 805px) {
+    .menu a {
         flex-basis: 50%;
     }
 }
+
 @media screen and (max-width: 940px) {
-    header.navbar.menu a{
+    header.navbar.menu a {
         font-size: 1.5em;
     }
-    header.navbar.menu a span{
+
+    header.navbar.menu a span {
         font-size: 1.5em;
     }
 }
-@media (min-width: 805px){
-    .menu{
+
+@media (min-width: 805px) {
+    .menu {
         font-size: 1em;
     }
-    a{
+
+    a {
         font-size: 1em;
     }
-    .button a{
+
+    .button a {
         font-size: 1em;
     }
 
 }
-#preloader{
+
+#preloader {
     background: #091836 url("logo-gif.gif") no-repeat center;
     z-index: 100;
     height: 100vh;
@@ -147,6 +184,7 @@ p {
     background-size: 30%;
 
 }
-.frame{
+
+.frame {
     display: none;
 }

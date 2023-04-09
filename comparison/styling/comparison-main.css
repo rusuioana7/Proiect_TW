@@ -13,14 +13,11 @@ header {
 
     width: 100%;
     height: 100vh;
-    background-size: cover;
 }
-
-
 
 header .navbar {
     width: 100%;
-    height: 100px;
+    height: 6.25em;
     display: flex;
     text-align: center;
     justify-content: space-around;
@@ -31,58 +28,60 @@ header .navbar {
 
 @media (max-width: 767px) {
     .header .navbar {
-        flex-wrap: wrap;
+
         height: auto;
         justify-content: center;
-        padding: 10px;
+        padding: 0.6250em;
+
     }
 }
 
-/* Media query for screens larger than 768px */
+
 @media (min-width: 768px) {
     .header .navbar {
-        height: 80px;
+        height: 5em;
+
     }
 }
 
 header .navbar .logo {
-    margin-top: 20px;
-    font-size: 25px;
+    margin-top: 1.25em;
+    font-size: 1.5em;
     color: transparent;
 }
 
 @media (max-width: 767px) {
     .header .navbar .logo {
-        margin-top: 10px;
-        font-size: 20px;
+        margin-top: 0.625em;
+        font-size: 1.25em;
     }
 }
 
-/* Media query for screens larger than 768px */
+
 @media (min-width: 768px) {
     .header .navbar .logo {
-        margin-top: 20px;
-        font-size: 25px;
+        margin-top: 1.25em;
+        font-size: 1.5em;
     }
 }
 
 header .navbar .menu a {
     color: #00FF00;
-    font-size: 20px;
+    font-size: 1.25em;
     text-decoration-line: none;
-    padding: 6px 15px;
+    padding: 0.375em 0.9375em;
     font-weight: 600;
     background-color: #00008B;
-    border-radius: 3px;
+    border-radius: 0.18em;
 }
 
 header .navbar .menu a i {
-    margin-top: 20px;
+    margin-top: 1.25em;
 }
 
 header .navbar .menu a span {
-    font-size: 20px;
-    margin-left: 10px;
+    font-size: 1.25em;
+    margin-left: 0.625em;
 }
 
 header .navbar .menu a:hover {
@@ -93,22 +92,30 @@ header .navbar .menu a:hover {
 
 
 
-header .navbar .button a {
+.button {
     text-decoration: none;
     text-align: center;
-    margin-top: 20px;
-
-
+    margin-top: 1vh;
     color: white;
-    font-size: 17px;
+    font-size: 1em;
     border: 1px solid white;
     border-radius: 5px;
     padding: 10px 20px;
     background-color: brown;
     transition: 0.4s;
+    max-height: 2vh;
+    min-width: 5vw;
+    flex-basis: calc(10% - 20px);
+    margin-right: 0.1em;
+    width: 20vw;
 }
 
-header .navbar .button a:hover {
+.button a {
+    font-size: 0.5em;
+    color: #00F00F;
+}
+
+header .navbar .button:hover {
     background-color: transparent;
     color: limegreen;
     border: 1px solid green;
@@ -116,85 +123,83 @@ header .navbar .button a:hover {
 
 @media (max-width: 767px) {
     .header .navbar .menu a {
-        font-size: 16px;
-        padding: 4px 10px;
+        font-size: 1em;
+        padding: 0.25em 0.625em;
     }
 
     .header .navbar .menu a i {
-        margin-top: 10px;
+        margin-top: 0.625em;
     }
 
     .header .navbar .menu a span {
-        font-size: 16px;
-        margin-left: 5px;
+        font-size: 1em;
+        margin-left: 1em;
     }
 
-    .header .navbar .button a {
-        margin-top: 10px;
-        font-size: 14px;
-        padding: 8px 16px;
-    }
 }
 
-/* Media query for screens larger than 768px */
+
 @media (min-width: 768px) {
     .header .navbar .menu a {
-        font-size: 20px;
-        padding: 6px 15px;
+        font-size: 1.25em;
+        padding: 0.37em 0.93em;
     }
 
     .header .navbar .menu a i {
-        margin-top: 20px;
+        margin-top: 1.25em;
     }
 
     .header .navbar .menu a span {
-        font-size: 20px;
-        margin-left: 10px;
+        font-size: 1.25em;
+        margin-left: 0.625em;
     }
 
-    .header .navbar .button a {
-        margin-top: 20px;
-        font-size: 17px;
-        padding: 10px 20px;
+    a {
+        font-size: 1em;
     }
+
+    .button a {
+        font-size: 1em;
+    }
+
+
 }
 
 
-/* Default styles */
+
 h1 {
     font-size: 3em;
     color: #00FF00;
-    margin-top: 20px;
+    margin-top: 1.25em;
     text-align: center;
 }
 
-/* Media query for screens smaller than 768px */
+
 @media (max-width: 767px) {
     h1 {
         font-size: 2em;
-        margin-top: 10px;
+        margin-top: 2em;
     }
 }
 
-/* Media query for screens larger than 768px */
+
 @media (min-width: 768px) {
     h1 {
         font-size: 3em;
-        margin-top: 20px;
+        margin-top: 1.25em;
     }
 }
 
 
-/* Default styles */
 body .information {
-    margin-top: -500px;
-    margin-left: 40px;
-    margin-right: 40px;
-    padding: 50px;
+    margin-top: -31em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    padding: 3.625em;
     background-color: #00008B;
-    border-radius: 15px;
-    padding: 10px;
-    margin-bottom: 20px;
+    border-radius: 0.93em;
+    padding: 0.625em;
+    margin-bottom: 1.25em;
 }
 
 .title {
@@ -209,24 +214,22 @@ body .information {
 .text {
     color: #00FF00;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 1.25em;
     text-align: center;
     margin-bottom: 0;
 }
 
-.space {
-    height: 20px;
-}
+
 
 .choosefilter {
     position: relative;
-    margin-top: 0px;
+    margin-top: 0;
     margin-left: 2.5%;
     margin-right: 2.4%;
-    padding: 20px;
+    padding: 1.25em;
     background-color: #00008B;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 }
 
 .filter {
@@ -235,14 +238,14 @@ body .information {
     font-weight: bold;
     font-size: 1.5em;
     margin-top: 0;
-    margin-left: 10px;
+    margin-left: 0.625em;
 }
 
-/* Media query for screens smaller than 768px */
+
 @media (max-width: 767px) {
     body .information {
-        margin: -500px 40px 20px 40px;
-        padding: 20px;
+        margin: -31em 2.5em 1.25em 2.5em;
+        padding: 1.25em;
     }
 
     .title {
@@ -250,12 +253,12 @@ body .information {
     }
 
     .text {
-        font-size: 16px;
+        font: size 1em;
     }
 
     .choosefilter {
-        margin: 0px 40px 20px 40px;
-        padding: 20px;
+        margin: 0px 2.5em 1.25em 2.5em;
+        padding: 1.25em;
 
     }
 
@@ -264,11 +267,11 @@ body .information {
     }
 }
 
-/* Media query for screens larger than 768px */
+
 @media (min-width: 768px) {
     body .information {
-        margin: -450px 40px 20px 40px;
-        padding: 30px;
+        margin: -28em 2.5em 1.25em 2.5em;
+        padding: 1.9em;
     }
 
     .title {
@@ -276,12 +279,12 @@ body .information {
     }
 
     .text {
-        font-size: 20px;
+        font-size: 1.25em;
     }
 
     .choosefilter {
-        margin: 0px 40px 20px 40px;
-        padding: 30px;
+        margin: 0 2.5em 1.25em 2.5em;
+        padding: 1.9em;
     }
 
     .filter {
@@ -304,7 +307,7 @@ body .information {
     background-color: #091836;
     padding: 0.2em;
     color: #00FF00;
-    margin-left: 10px;
+    margin-left: 0.625em;
     font-family: 'Josefin Sans', sans-serif;
 
 }
@@ -319,62 +322,58 @@ body .information {
     background-color: #091836;
     padding: 0.2em;
     color: #00FF00;
-    margin-left: 10px;
+    margin-left: 0.625em;
     font-family: 'Josefin Sans', sans-serif;
 
 }
 
 
-
-
-
-/* Medium devices (576px - 992px) */
 @media (min-width: 576px) and (max-width: 992px) {
     .select-menu .select-button {
-        font-size: 18px;
-        margin-right: 20px;
+        font-size: 1.125em;
+        margin-right: 1.25em;
     }
 
     .option .option-text {
-        font-size: 18px;
+        font-size: 1.125em;
     }
 }
 
-/* Large devices (992px and up) */
+
 @media (min-width: 992px) {
     .select-menu-container {
         flex-direction: row;
     }
 
     .select-menu {
-        margin: 50px auto;
+        margin: 3.1em auto;
 
     }
 
     .select-menu .select-button {
-        font-size: 20px;
-        padding: 15px 20px;
-        margin-right: 10px;
+        font-size: 1.25em;
+        padding: 0.93em 1.25em;
+        margin-right: 0.625em;
     }
 
     .option .option-text {
-        font-size: 20px;
+        font-size: 1.25em;
     }
 }
 
 
 .chooseformat {
-    margin-top: 30px;
-    margin-left: 40px;
-    margin-right: 40px;
-    padding: 50px;
+    margin-top: 1.9em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    padding: 3.12em;
     background-color: #00008B;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 0.625em;
+    margin-bottom: 1.25em;
 
 }
 
@@ -384,15 +383,15 @@ body .information {
     font-weight: Bold;
     font-size: 1.5em;
     margin-top: 0;
-    margin-left: 10px;
+    margin-left: 0.625em;
 
 }
 
 @media (max-width: 767px) {
 
     .chooseformat {
-        margin: 0px 40px 20px 40px;
-        padding: 20px;
+        margin: 0px 2.5em 1.25em 2.5em;
+        padding: 1.25em;
 
     }
 
@@ -404,8 +403,8 @@ body .information {
 @media (min-width: 768px) {
 
     .chooseformat {
-        margin: 0px 40px 20px 40px;
-        padding: 10px;
+        margin: 0px 2.5em 1.25em 2.5em;
+        padding: 0.625em;
     }
 
     .format {
@@ -416,18 +415,18 @@ body .information {
 
 
 .content {
-    width: 300px;
-    height: 10px;
-    margin: 50px auto;
-    margin-top: -10px;
+    width: 18.7em;
+    height: 0.625em;
+    margin: 3.12em auto;
+    margin-top: -0.625em;
 }
 
 .content .generate {
     display: flex;
-    height: 20px;
+    height: 1.25em;
     background: #091836;
-    padding: 20px;
-    font-size: 18px;
+    padding: 1.25em;
+    font-size: 1.125em;
     font-weight: lighter;
     border-radius: 8px;
     align-items: center;
@@ -441,9 +440,9 @@ body .information {
 .content label {
     color: #00FF00;
     user-select: none;
-    padding-left: 5px;
+    padding-left: 0.3em;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: lighter;
 
 }
@@ -451,15 +450,15 @@ body .information {
 @media screen and (max-width: 900px) {
     .content {
         width: 95%;
-        margin-bottom: 20px;
+        margin-bottom: 1.25em;
     }
 
     .content .generate {
-        padding: 10px;
-        font-size: 14px;
+        padding: 0.625em;
+        font-size: 0.875em;
     }
 
     .content label {
-        font-size: 14px;
+        font-size: 0.875em;
     }
 }
