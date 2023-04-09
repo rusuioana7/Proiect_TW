@@ -5,6 +5,7 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -13,65 +14,94 @@ body {
     max-height: 100vh;
     width: 100%;
 }
+
 header {
-    min-height: 100vh;
+
     width: 100%;
-    height: 100%;
-    background-image: url("images/bck2.jpg");
+    height: 100vh;
+    background-image: url("../logo_myProfile_about/images/bck2.jpg");
     background-size: cover;
     background-position: center;
-    position: relative;
-    padding: 0;
-    overflow-x: hidden;
 }
-.menu{
-    font-size: 0.5em;
-    justify-content: space-between;
 
-}
-.menu a{
-    margin-right: 0.5em;
-}
-.navbar {
+header .navbar {
     width: 100%;
-    height: 100px;
+    height: 6.25em;
     display: flex;
     text-align: center;
     justify-content: space-around;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
-    margin-top: 2vh;
-}
-@media (max-width: 767px) {
-    .header .navbar {
-        flex-wrap: wrap;
-        height: auto;
-        justify-content: center;
-        padding: 10px;
-    }
-}
-header .navbar .menu a {
-    color: #00FF00;
-    font-size: 1em;
-    text-decoration-line: none;
-    padding: 6px 15px;
-    font-weight: 600;
-    background-color: #00008B;
-    border-radius: 3px;
-    margin-left: 0;
-    margin-top: 0;
 
 }
-header .navbar .menu a span {
-    font-size: 1.3em;
-    margin-left: 0.5em;
+
+@media (max-width: 767px) {
+    .header .navbar {
+
+        height: auto;
+        justify-content: center;
+        padding: 0.6250em;
+
+    }
 }
+
+
+@media (min-width: 768px) {
+    .header .navbar {
+        height: 5em;
+
+    }
+}
+
+header .navbar .logo {
+    margin-top: 1.25em;
+    font-size: 1.5em;
+    color: transparent;
+}
+
+@media (max-width: 767px) {
+    .header .navbar .logo {
+        margin-top: 0.625em;
+        font-size: 1.25em;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .header .navbar .logo {
+        margin-top: 1.25em;
+        font-size: 1.5em;
+    }
+}
+
+header .navbar .menu a {
+    color: #00FF00;
+    font-size: 1.25em;
+    text-decoration-line: none;
+    padding: 0.375em 0.9375em;
+    font-weight: 600;
+    background-color: #00008B;
+    border-radius: 0.18em;
+}
+
+header .navbar .menu a i {
+    margin-top: 1.25em;
+}
+
+header .navbar .menu a span {
+    font-size: 1.25em;
+    margin-left: 0.625em;
+}
+
 header .navbar .menu a:hover {
     background-color: #00FF00;
     color: #00008B;
     transition: 0.5s;
 }
-.button{
+
+
+
+.button {
     text-decoration: none;
     text-align: center;
     margin-top: 1vh;
@@ -88,15 +118,62 @@ header .navbar .menu a:hover {
     margin-right: 0.1em;
     width: 20vw;
 }
-.button a{
+
+.button a {
     font-size: 0.5em;
-    color: #00F00F ;
+    color: #00F00F;
 }
-header .navbar .button a:hover {
+
+header .navbar .button:hover {
     background-color: transparent;
     color: limegreen;
     border: 1px solid green;
 }
+
+@media (max-width: 767px) {
+    .header .navbar .menu a {
+        font-size: 1em;
+        padding: 0.25em 0.625em;
+    }
+
+    .header .navbar .menu a i {
+        margin-top: 0.625em;
+    }
+
+    .header .navbar .menu a span {
+        font-size: 1em;
+        margin-left: 1em;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .header .navbar .menu a {
+        font-size: 1.25em;
+        padding: 0.37em 0.93em;
+    }
+
+    .header .navbar .menu a i {
+        margin-top: 1.25em;
+    }
+
+    .header .navbar .menu a span {
+        font-size: 1.25em;
+        margin-left: 0.625em;
+    }
+
+    a {
+        font-size: 1em;
+    }
+
+    .button a {
+        font-size: 1em;
+    }
+
+
+}
+
 h1 {
     color: #00F00F;
     position: relative;
@@ -104,6 +181,7 @@ h1 {
     font-size: 0.8rem;
     margin-top: -3vh;
 }
+
 .subtitle h2 {
     text-align: center;
     position: absolute;
@@ -114,6 +192,7 @@ h1 {
     z-index: 1;
     color: #00F00F;
 }
+
 .subtitle h2::after {
     content: "";
     height: 1vh;
@@ -122,6 +201,7 @@ h1 {
     display: block;
     margin: auto;
 }
+
 .services {
     width: 90%;
     display: flex;
@@ -133,6 +213,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .card {
     width: 100%;
     display: flex;
@@ -146,10 +227,12 @@ h1 {
     cursor: pointer;
     max-height: 60vh;
 }
+
 .card:hover {
     background-color: #091836;
     transition: 0.4s ease;
 }
+
 .card h3 {
     font-size: 1em;
     color: #00F00F;
@@ -160,18 +243,21 @@ h1 {
     margin: 0px 20px;
     max-height: 60vh;
 }
+
 .card p1 {
     font-size: 0.7rem;
     line-height: 1.5;
     color: #00F00F;
     margin-bottom: 20px;
 }
+
 .card p3 {
     font-size: 0.7rem;
     line-height: 1.5;
     color: #00F00F;
     margin-bottom: 30px;
 }
+
 .button_read1 {
     font-size: 0.8em;
     text-decoration: none;
@@ -185,15 +271,18 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .button_read1:hover {
     background-color: #091836;
     transition: 0.4s ease;
 }
+
 @media screen and (max-width: 805px) {
     .menu a {
         flex-basis: 50%;
     }
 }
+
 @media screen and (max-width: 940px) {
     .services {
         display: flex;
@@ -206,52 +295,66 @@ h1 {
         margin: 20px 0px;
         max-height: 20vh;
     }
+
     .card h2 {
         width: 80%;
         display: flex;
         max-height: 15vh;
     }
-    header.navbar.menu a{
+
+    header.navbar.menu a {
         font-size: 1.5em;
     }
-    header.navbar.menu a span{
+
+    header.navbar.menu a span {
         font-size: 1.5em;
     }
 }
+
 @media (min-width: 805px) {
     .card h3 {
         font-size: 1.5em;
     }
+
     .card p1 {
         font-size: 1rem;
     }
+
     .card p3 {
         font-size: 1rem;
     }
+
     .button_read1 {
         font-size: 1rem;
     }
+
     .menu {
         font-size: 1em;
     }
+
     .subtitle h2 {
         font-size: 1.3rem;
     }
+
     a {
         font-size: 1em;
     }
+
     .button a {
         font-size: 1em;
     }
-    .menu a{
+
+    .menu a {
         flex-basis: calc(25% - 20px);
         margin-bottom: 0;
     }
 }
+
 @media (max-width: 400px) {
     h1 {
         display: none;
     }
+
     h2 {
         display: none;
     }
