@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentatie</title>
+</head>
+<body>
+<header>
+    <h1>Obesity Visualizer- Documentatie</h1>
+</header>
+<h2>Introducere</h2>
+<section>
+    <h3>Specificatii pentru cerintele software</h3>
+    <ul>
+        <li>Aplicatia web trebuie sa fie dezvoltata folosind HTML, CSS. </li>
+        <li>  Aplicatia trebuie sa utilizeze un API REST propriu pentru a obtine datele publice furnizate de Eurostat.</li>
+        <li> Utilizatorii trebuie sa poata selecta diferite criterii pentru a genera statistici si comparatii precum:
+            <ul>
+                <li>regiuni geografice</li>
+                <li>an</li>
+            </ul>
+        <li>Aplicatia trebuie sa ofere cel puin trei modalitati de vizualizare a datelor:
+            <ul>
+                <li>grafice</li>
+                <li>tabele</li>
+                <li>harti</li>
+            </ul>
+        <li>Utilizatorii trebuie sa poata exporta vizualizarile in formatele:
+            <ul>
+                <li>CSV</li>
+                <li>WebP</li>
+                <li>SVG</li>
+            </ul>
+        <li>Aplicatia trebuie sa ofere o interfata intuitiva si usor de utilizat pentru a asigura o experienta de utilizare placuta. </li>
+        <li> Se va asigura securitatea datelor utilizatorilor prin utilizarea de protocoale de securitate si criptare.</li>
+    </ul>
+</section>
+<section>
+    <h3>Scopul Produsului</h3>
+    <p>Software-ul specificat este o aplicatie web dezvoltata pentru a vizualiza si compara informatii referitoare la obezitatea populatiei,
+        folosind datele publice furnizate de Eurostat prin intermediul unui API REST propriu.
+        Scopul acestei aplicatii este de a oferi utilizatorilor o modalitate simpla de a accesa, vizualiza si compara datele de obezitate in diferite
+        regiuni geografice, comparand in functie de  diferiti ani. Aplicatia ofera mai multe modalitati de vizualizare: tabele, grafice si harti.</p>
+
+    <p>Beneficiile acestei aplicatii sunt multiple, de la simplificarea accesului la date relevante, pana la aprofundarea intelegerii si
+        identificarea trendurilor in ceea ce priveste obezitatea la nivelul populatiei in Europa. Obiectivele si scopurile acestui software
+        sunt de a furniza o interfata usor de utilizat, de a permite exportarea vizualizarilor in mai multe
+        formate:
+    <dl>
+        <dt>CSV</dt>
+        <dd>"Comma Separated Values" inseamna "Valori separate prin virgula". Este un format de fisier care este folosit pentru a stoca date tabelare,
+            cum ar fi foi de calcul sau baze de date. In cadrul unui fisier CSV, fiecare linie reprezinta un rand de date si fiecare
+            valoare dintr-un rand este separata prin virgula;</dd>
+        <dt>WebP</dt>
+        <dd>WebP este un format de imagine care utilizează tehnologia de compresie cu pierdere si fara pierdere pentru a reduce dimensiunea
+            fisierelor imagine;
+        </dd>
+        <dt>SVG</dt>
+        <dd>"Scalable Vector Graphics" este un format de fiier pentru imagini vectoriale, care sunt create folosind forme geometrice
+            precum linii, curbe si poligoane, si nu folosesc pixeli;</dd>
+    </dl>
+    si de a asigura securitatea datelor utilizatorilor prin utilizarea de protocoale de securitate si
+    criptare.</p>
+
+    <p>Aceasta aplicatie este asociata cu diferite strategii de afaceri prin faptul ca poate oferi o perspectiva mai clara asupra problemelor de
+        sanatate publica si a trendurilor, ceea ce poate contribui la elaborarea startegiilor de sanatate publica si la imbunatatirea generala a
+        sanatatii populatiei.</p>
+</section>
+<section>
+    <h3>Conventii ale aplicatiei</h3>
+    <p>Culorile utilizate in aplicatie vor fi considerate identitatea vizuala a
+        paginii web, acestea fiind urmatoarele: #091836 (dark blue),
+        #B0E0E6 (light blue),
+        #00FF00(neon green).</p>
+    <p>Font-ul contribuie, in egala masura, la identitatea paginii, acesta fiind: 'Josefin Sans', sans-serif.</p>
+    <p>Icon-urile alese sunt in concordanta cu butoanele specifice, adaugand o nota de sugestivitate,
+        facand mai facila navigarea intre pagini. Acestea sunt importate cu ajutorul
+        <a href="https://fontawesome.com/search">https://fontawesome.com/search</a>
+    </p>
+</section>
+<section>
+    <h3>Referinte</h3>
+    <p>Prin utilizarea API-ului propriu, aplicaia extrage datele specifice referitoare la obezitatea populației din baza de date publica a Eurostat.</p>
+    <p><a href="https://ec.europa.eu/eurostat/databrowser/view/sdg_02_10/default/table?lang=en">Eurostat</a> este Biroul European de Statistica si este sursa datelor publice utilizate in aplicatia web specificata in aceasta cerinta a software-ului.
+        Informatii suplimentare despre Eurostat si datele sale statistice pot fi gasite pe site-ul sau oficial:<a href="https://ec.europa.eu/eurostat/databrowser/view/sdg_02_10/default/table?lang=en">https://ec.europa.eu/eurostat</a></p>
+</section>
+<h2>Descriere generala</h2>
+<section>
+    <h3>Functiile aplicatiei</h3>
+    <p>Pentru o buna intelegere a functiilor aplicatiei, atasam diagramele Use-Case si nivelul 3 al diagramei C4 (Component-level Diagram):</p>
+    <img src="useCase_diag.png" width="600" alt="Diagrama UseCase"> <br>
+    <img src="component_diag.png" width="650" height="550" alt="Diagrama C4-level3-Componenta">
+
+</section>
+
+<section>
+    <h3>Clase de utilizatori si caracteristici</h3>
+    <p>Tipuri de utilizatori:</p>
+    <ol>
+        <li>Neautentificat</li>
+        <p>Acesta este intampinat de formularul de conectare/inregistrare al paginii pentru
+            a se loga sau a-si creea cont. Datele ii vor fi verificate in baza de date,
+            daca exista utilizatorul va deveni logat si va fi redirectionat catre aplicatie,
+            fiind intampinat de "loading-page-ul" aplicatiei ce contine logo-ul creatorilor,
+            urmand sa aiba acces la intreaga aplicatie, navigarea prin aplicatie fiind
+            facilitata de navbar-ul cu meniul aplicatiei ce contine butoanele paginilor.
+        </p>
+        <li>Autentificat</li>
+        <p>Acest utilizator este intampinat de "loading-page-ul" aplicatiei, urmand sa fie
+            redirectionat catre pagina "Home". De acolo, prin intermediul navbarului,
+            acesta va naviga printre paginile dorite.</p>
+    </ol>
+</section>
+
+<section>
+    <h3>Mediu de operare</h3>
+    <p>Pentru a asigura o performanta optima si o functionare adecvata a software-ului, este important
+        sa se ia in considerare mediul in care acesta va functiona.</p>
+    <ul>
+        <li>Software-ul trebuie sa fie compatibil cu platforma hardware pe care va fi utilizat.
+            Aceasta poate include specificatii precum procesorul, memoria RAM, stocarea si alte componente
+            hardware necesare pentru a rula aplicatia in mod eficient.</li>
+        <li>Sistemul de operare si versiunile: Software-ul ar trebui sa fie compatibil cu sistemul de operare pe
+            care va fi utilizat. Aceasta poate include versiunile de Windows, macOS, Linux, iOS sau Android.</li>
+    </ul>
+    <p>
+        Mediul de operare al proiectului include:
+    <ul>
+        <li>
+            Sisteme de operare: Windows, Linux.
+        </li>
+        <li>
+            Pentru serverul web: PhP
+        </li>
+        <li>
+            Limbaje de programare: HTML, CSS, PhP
+        </li>
+        <li> Baza de date MySQL.</li>
+    </ul>
+    </p>
+</section>
+
+<section>
+    <h3>Ipoteze si dependente</h3>
+    <p>Cativa factori care pot afecta cerintele software-ului sunt:</p>
+    <ul>
+        <li>Disponibilitatea si calitatea datelor Eurostat
+            <p>Aplicatia se bazeaza pe datele publice oferite de Eurostat,
+                iar daca aceastea pot fi incomplete, inexacte sau pot avea modificari neasteptate. Prin urmare, daca acestea vor fi neglijate,
+                si cerintele aplicatiei pot fi afectate. </p>
+        </li>
+        <li>Schimbrile legislatiei privind protectia datelor personale
+            <p>Deoarece aceast aaplicatie Web implica prelucrarea datelor personale, schimbaile legislative privind protectia
+                datelor personale ar putea afecta cerintele stabilite in aplicatie , cum ar fi securitatea datelor, respectarea
+                confidentialitii.</p>
+        </li>
+    </ul>
+</section>
+<h2>Cerintele interfetei</h2>
+<section>
+    <h3>Interfata utilizatorului</h3>
+    <p>Accesati:
+        <a href="https://www.figma.com/file/Zgk7cetoMlBvljoxd1Y1OJ/proiect-TW?node-id=0-1&t=DuxL9YFKbVGY5fM0-0">Schite-Design-in-Figma</a>
+    </p>
+</section>
+<section>
+    <h3>Interfata hardware</h3>
+    <p>Pagina web este responsive, aspectul modificandu-se in functie de dimensiunea ecranului. Aplicatia poate fi deschisa
+        de pe telefon,tableta sau laptop (desktop), iar trasaturile au fost gandite pentru a fi atractiva si usor de utilizat pe oricare din aceste
+        device-uri.
+    </p>
+</section>
+<section>
+    <h3>Interfata software</h3>
+    <p>Se va folosi o baza de date pentru a retine informatiile despre utilizatori. Aceasta va fi folosita la :
+    <ul>
+        <li>Sign Up- cand se adauga un user nou in baza de date;</li>
+        <li>Login- cand se va cauta utilizatorul in baza de date pentru a verifica existenta acestuia;</li>
+        <li>Log out- pentru a sti ca utilizatorul nu mai este logat;</li>
+        <li>My Profile- cand utilizatorul isi actualizeaza datele contului.</li>
+    </ul>
+    </p>
+    <p>De asemenea, se va folosi baza de date pentru a imorta date necesare din baza de date Eurostat.</p>
+</section>
+<h2>Caracteristicile sistemului</h2>
+<section>
+
+    <h3>1. Pagina preload</h3>
+    <p>Pagina preload cu logo-ul creatorilor (IT.E) se va incarca de fiecare data cand este accesata pagina Home.
+        Aceasta pagina a fost creata astfel: crearea logo-ului ca o pagina HTML folosing CSS pentru styling, urmand apoi
+        transformarea acesteia intr-un gif.
+    </p>
+    <h3>2. Navbarul</h3>
+    <p>Acesta faciliteaza navigarea intregii aplicatii prin butoane specifice:
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>My profile</li>
+        <li>Statistics</li>
+        <li>Comparison</li>
+        <li>LogOut</li>
+    </ul>
+    </p>
+    <h3>3. Creare cont/ logare</h3>
+    <p>Aceasta functie stabileste statutul unui utilizator (autentificat/ neautentificat/ neinregistrat), permitant trecerea de la un statut la altul.</p>
+    <h3>4. Butonul Home</h3>
+    <p>Pagina pune la dispozitie titlu, text relevant contextului obezitatii, impreuna cu restul navbar-ului.</p>
+    <h3>5. Butonul About</h3>
+    <p>Pagina pune la dispozitie informatii despre scopul paginilor "Statistics" si "Comparison", butoanele "Read More"
+        redirectionand utilizatorii catre aceste pagini, oferindu-le sansa de a vizualiza si compara statistici.</p>
+    <h3>6. Butonul My Profile</h3>
+    <p>Permite utilizatorilor posibilitatea de a-si actualiza datele personale, avand totodata si scop de securitate,
+        permitand schimbarea parolei. </p>
+    <h3>7. Butonul Statistics</h3>
+    <p>Redirectioneaza catre o pagina interactiva unde utilizatorul poate
+        filtra tara si anul, pentru a vedea statistici pentru BMI.
+    <p> Butoanele de tip "Generate" redirectioneaza catre pagini ce permit o vizualizare clara a datelor (in forma aleasa
+        "Generate line"/  "Generate bar"/ "Generate table"/ "Generate map") si permite, de asemenea, exportul generarii printr-un buton
+        "Export" in unul din formatele alese de catre utilizator: CSV, WebP, SVG.
+    </p>
+    <h3>8. Butonul Comparison</h3>
+    <p> Redirectioneaza catre o pagina interactiva unde utilizatorul are posibilitatea de a compara datele despre obezitate
+        din 2 tari, permitand si alegerea unui an/pe toti anii disponibili, pentru o mai buna intelegere a statisticilor si a trendurilor obezitatii in Europa.
+        De asemenea, butoanele "Generate line"/  "Generate bar"/ "Generate table"/ "Generate map" redirectioneaza catre pagini cu
+        vizualizari ale datelor selectate, permitand si de aceasta data exportul rezultatelor in formate alese de utilizator: CSV, SVG, WebP. </p>
+
+    <h3>11. Butonul LogOut</h3>
+    <p>Redirectioneaza catre pagina cu formularul de login/register, oferind ocazia utilizatorilor de a-si schimba statutul intre autentificat/neautentificat.
+        De asemenea, ajuta serverul pentru a sti ce date se modifica in baza de date.</p>
+</section>
+<h2>Alte cerinte nonfunctionale</h2>
+<h3>Cerinte de securitate</h3>
+<p>Sunt necesare urmatoarele cerinte privind securitatea si confidentialitatea:</p>
+<ul>
+    <li>Protejarea datelor utilizate si create de aplicatie: datele utilizate pentru aceasta aplicatie sunt furnizate de
+        Eurostat si trebuie sa fie publice. Cu toate acestea, pentru a asigura protectia datelor personale, trebuie sa se
+        ia masuri de securitate adecvate pentru a proteja datele utilizatorilor. Aceasta poate include utilizarea criptarii datelor
+        in tranzit si la repaus, dar si a altor tehnologii de securitate.</li>
+    <li>Autentificarea utilizatorilor: pentru a asigura ca doar utilizatorii autorizati pot accesa si utiliza aplicatia,
+        este necesar o autentificare adecvata a identitatii utilizatorilor.</li>
+</ul>
+
+</body>
+</html>
