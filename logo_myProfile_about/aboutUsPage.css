@@ -26,18 +26,11 @@ header {
 }
 .menu{
     font-size: 0.5em;
+    justify-content: space-between;
+
 }
 .menu a{
-    flex-basis: calc(25% - 20px);
     margin-right: 0.5em;
-}
-.navbar{
-    width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-    color: white;
-    margin-top: 2vh;
 }
 .navbar {
     width: 100%;
@@ -47,7 +40,7 @@ header {
     justify-content: space-around;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
-
+    margin-top: 2vh;
 }
 @media (max-width: 767px) {
     .header .navbar {
@@ -241,9 +234,6 @@ h1 {
     .menu {
         font-size: 1em;
     }
-    h1 {
-        font-size: 1.5rem;
-    }
     .subtitle h2 {
         font-size: 1.3rem;
     }
@@ -252,6 +242,10 @@ h1 {
     }
     .button a {
         font-size: 1em;
+    }
+    .menu a{
+        flex-basis: calc(25% - 20px);
+        margin-bottom: 0;
     }
 }
 @media (max-width: 400px) {

@@ -3,6 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     max-height: 80vh;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .header {
@@ -22,10 +23,12 @@ h1 {
     top: -90vh;
     left: 40vw;
     color: #00ff00;
-    font-size: 1em;
+    font-size: 0.7rem;
     margin-top: 0;
     margin-left: 0;
     max-width: 50vw;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
 }
 
 .profil-pic {
@@ -230,7 +233,7 @@ a:nth-of-type(2):hover {
 
 @media (min-width: 768px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.5rem;
     }
 
     .all {
@@ -244,7 +247,7 @@ a:nth-of-type(2):hover {
 
 @media (min-width: 1024px) {
     h1 {
-        font-size: 2.5em;
+        font-size: 1.5rem;
     }
 
     .all {
