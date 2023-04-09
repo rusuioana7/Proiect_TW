@@ -138,3 +138,15 @@ p {
     }
 
 }
+#preloader{
+    background: #091836 url("logo-gif.gif") no-repeat center;
+    z-index: 100;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-size: 30%;
+
+}
+.frame{
+    display: none;
+}
