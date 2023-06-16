@@ -46,41 +46,118 @@
 
     <div class="choosefilter">
 
-        <h3 class="filter">Option 1:</h3>
+        <h3 class="filter">Choose filter:</h3>
 
 
-        <div class="select-menu-container">
-            <div class="select-country">
-                <label class="labels>">Select Country:</label>
+       <button id="open-button">Select Countries</button>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="exit-button">
+                 <img src="close.png" alt>
+                <script>
+                    var exitButton = document.querySelector('.exit-button img');
+                    exitButton.addEventListener('click', function() {
+                        var modal = document.getElementById('modal');
+                        modal.style.display = 'none';
+                    });
+                </script>
+            </span>
+            <h3>Countries:</h3>
+            <div class="country-options">
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">European Union-27 countries (from 2020)</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-28 countries (2013-2020)">European Union-28 countries (2013-2020)</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (2007-2013)">European Union-27 countries (2007-2013)</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Euro area- 19 countries (2015- 2022)</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Euro area-18 countries (2014)</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Belgium</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Bulgaria</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Czechia</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Denmark</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Germany (until 1990 former territory of the FRG)"</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Estonia</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Ireland</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Greece"</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Spain</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">France</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Croatia</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Italy</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Cyprus</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Latvia</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Lithuania</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Luxembourg</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Hungary</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Malta</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Netherlands</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Austria</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Poland</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Portugal</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Romania</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Slovenia</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Slovakia</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Finland</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Sweden</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Iceland</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Norway</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Switzerland</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">United Kingdom</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">North Macedonia</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Serbia</label>
+                <label>
+                    <input type="checkbox" name="country" value="European Union-27 countries (from 2020)">Turkiye</label>
             </div>
-            <section id="country">
-                <select id="country-select">
-                    <option>Albania</option>
-                    <option value="Austria">Andora</option>
-                    <option value="Albania">Belarus</option>
-                    <option value="Austria">Belgium</option>
-                    <option value="Albania">Croatia</option>
-                    <option value="Austria">Cyprus</option>
-                    <option value="Albania">Denmark</option>
-                    <option value="Austria">Estonia</option>
-                    <option value="Albania">Finland</option>
-                    <option value="Austria">Georgia</option>
-                    <option value="Albania">Hungary</option>
-                    <option value="Austria">Iceland</option>
-                    <option value="Albania">Kosovo</option>
-                    <option value="Austria">Lithuania</option>
-                    <option value="Albania">Moldova</option>
-                    <option value="Austria">Netherlands</option>
-                    <option value="Albania">Poland</option>
-                    <option value="Austria">Romania</option>
-                    <option value="Albania">Serbia</option>
-                    <option value="Austria">Spain</option>
-                    <option value="Albania">Turkey</option>
-                    <option value="Austria">Ukraine</option>
-                    <option value="Albania">Vatican City</option>
-                </select>
-                <div id="chart"></div>
-            </section>
+            <div class="modal-buttons">
+                <button id="apply-button">Apply</button>
+                <button id="exit-button">Exit</button>
+            </div>
+        </div>
+    </div>
+<script src="comparison-main-filters.js"></script>
+
+
+<section class="countries" id="countries">
+    <div class="box-container"></div>
+</section>
+
+              
 
             <div class="select-year">
                 <label class="labels>">Select Year:</label>
