@@ -99,17 +99,16 @@ h1 {
     height: auto;
 }
 
-#country-select option {
-    font-size: 1em;
-    padding: 10px;
-    height: 20px;
-}
+
 
 #country-select {
-    font-size: 0.5em;
+    font-size: 0.75em;
     padding: 3px;
     height: auto;
     width: 18vw;
+    margin-left: 8.7em;
+    position: relative;
+    top: -1.38em;
 }
 
 a:nth-of-type(1) {
