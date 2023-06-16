@@ -26,6 +26,10 @@ header .navbar {
 
 }
 
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
 @media (max-width: 767px) {
     .header .navbar {
 
@@ -34,6 +38,75 @@ header .navbar {
         padding: 0.6250em;
 
     }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    background-color: #00F00F;
+    overflow-y: auto;
+    height: 50vh;
+    width: 40vw;
+    padding: 30px;
+    border: 1px solid #888;
+    font-size: 1.3rem;
+    top: 30%;
+    left: 30%;
+}
+
+.modal-content j{
+position: relative;
+    top: 50em;
+
+}
+.modal-content h3{
+    font-size: 1.3em;
+    color: #00008B;
+}
+.exit-button img {
+    width: 2vw;
+    height: 4vh;
+    cursor: pointer;
+    position: relative;
+    top: -1em;
+    left:-5%;
+}
+
+.country-options label{
+    display: block;
+}
+.modal-content .country-options label {
+    font-size: 1.1em;
+    color: #00008B;
+}
+
+.modal-content .modal-buttons button {
+    font-size: 1em;
+}
+
+.country-options {
+
+    padding-right: 30px;
+}
+
+.modal-buttons {
+    text-align: center;
+}
+.modal-buttons button{
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #06b00f;
+    color: white; /* Adjust the text color as needed */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.modal-buttons button:hover {
+    background-color: #00008B; /* Adjust the hover background color as needed */
 }
 
 
@@ -326,7 +399,19 @@ body .information {
     font-family: 'Josefin Sans', sans-serif;
 
 }
-
+}
+option[value="2019"] {
+    font-size: 1.3em; /* Adjust the value as needed */
+}
+option[value="2018"] {
+    font-size: 1.3em; /* Adjust the value as needed */
+}
+option[value="2017"] {
+    font-size: 1.3em; /* Adjust the value as needed */
+}
+option[value="2014"] {
+    font-size: 1.3em; /* Adjust the value as needed */
+}
 
 @media (min-width: 576px) and (max-width: 992px) {
     .select-menu .select-button {
