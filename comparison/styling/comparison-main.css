@@ -326,7 +326,7 @@ body .information {
     }
 
     .text {
-        font: size 1em;
+        font-size: 1em;
     }
 
     .choosefilter {
@@ -399,7 +399,7 @@ body .information {
     font-family: 'Josefin Sans', sans-serif;
 
 }
-}
+
 option[value="2019"] {
     font-size: 1.3em; /* Adjust the value as needed */
 }
