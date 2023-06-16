@@ -163,7 +163,24 @@ header .navbar .menu a:hover {
     transition: 0.5s;
 }
 
+#open-button {
+    background-color: #2c2cea;
+    color: #00FF00;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: -30rem;
+    margin-left: 3rem;
+}
 
+#open-button:hover {
+    background-color: #00F00F;
+    color: #1818ec;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 
 .button {
     text-decoration: none;
@@ -386,17 +403,22 @@ body .information {
 }
 
 .select-year {
-    margin-left: 2em;
+    margin-left: 30em;
     color: #00FF00;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    margin-top: -5vh;
 }
 
 #year-select {
     background-color: #091836;
     padding: 0.2em;
     color: #00FF00;
-    margin-left: 0.625em;
+    margin-left: 65em;
     font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+    top: -33px;
+    width: 7em ;
+    height: 3em;
 
 }
 
