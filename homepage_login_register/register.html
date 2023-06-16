@@ -16,16 +16,17 @@
           <button type="button" class="toggle-btn" onclick="location.href='login0.html'">Log In</button>
           <button type="button" class="toggle-btn" onclick="">Register</button>
         </div>
-        <form id="register" action="../homepage_login_register/homepage0.html">
+        <form class="register">
           <div class="control">
-            <input type="text" class="input-field" placeholder="First Name" required>
-            <input type="text" class="input-field" placeholder="Last Name" required>
-            <input type="text" class="input-field" placeholder="User ID" required>
-            <input type="text" class="input-field" placeholder="E-mail" required>
-            <input type="password" class="input-field" placeholder="Enter Password" required>
-            <input type="password" class="input-field" placeholder="Confirm Password" required>
-            <input type="text" class="input-field" placeholder="Country" required>
+            <input name="firstname" type="text" class="input-field" placeholder="First Name" required>
+            <input name="lastname" type="text" class="input-field" placeholder="Last Name" required>
+            <input name="username" type="text" class="input-field" placeholder="Username" required>
+            <input name="email" type="text" class="input-field" placeholder="E-mail" required>
+            <input name="password" type="password" class="input-field" placeholder="Enter Password" required>
+            <input name="password2" type="password" class="input-field" placeholder="Confirm Password" required>
+            <input name="country" type="text" class="input-field" placeholder="Country" required>
           </div>
+          <div class="error" style="display: none"></div>
           <div class="control">
             <input type="submit" value="Sign Up">
           </div>
@@ -33,6 +34,7 @@
       </div>
     </div>
   </section>
+  <script src="register_backend.js"></script>
 </body>
 
 </html>
