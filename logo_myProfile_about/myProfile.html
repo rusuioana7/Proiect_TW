@@ -15,8 +15,18 @@
 </section>
 <h1>My Profile</h1>
 
-<a href="../homepage_login_register/homepage0.html" style="--clr:#1e9bff"><span>Delete </span><i> </i></a>
-<a href="../homepage_login_register/homepage0.html"><span>Exit </span><i></i></a>
+    <button type="button" class="toggle-btn" onclick="confirmDelete()">Delete</button>
+
+<script>
+    function confirmDelete() {
+        const confirmDelete = confirm("Are you sure you want to delete your account?");
+        if (confirmDelete) {
+            deleteProfile();
+        }
+    }
+</script>
+<button type="button" class="exit-btn" onclick="goBack()"><span>Exit</span><i></i></button>
+
 
 <img class="profil-pic" src="images/profilepic.jpg">
 <div class="all">
@@ -49,6 +59,7 @@
         </div>
     </div>
 </div>
+    <script src="myProfile.js"></script>
 </body>
 
 </html>
