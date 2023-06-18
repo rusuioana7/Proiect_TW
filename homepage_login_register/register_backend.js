@@ -1,9 +1,17 @@
-
 const registerForm = document.querySelector("form.register")
 registerForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(registerForm)
+    const password = formData.get("password");
+    const confirmPassword = formData.get("password2");
 
+    if (password !== confirmPassword) {
+        const err = document.querySelector('form.register .error');
+        err.textContent = 'Passwords do not match.';
+        err.style.display = 'block';
+        return;
+    }
+    else{}
     const registerData =
         {
             "firstname": formData.get("firstname"),
