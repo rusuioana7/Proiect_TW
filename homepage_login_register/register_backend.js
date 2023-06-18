@@ -35,7 +35,7 @@ registerForm.addEventListener('submit', async (event) => {
         if (!response.ok) {
             console.log('An error occurred:', response.statusText);
             const err = document.querySelector('form.register .error');
-            err.textContent = 'N ai voie!';
+            err.textContent = 'Email already used';
             err.style.display = 'block';
             return;
         }
