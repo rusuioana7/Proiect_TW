@@ -1,5 +1,5 @@
 let firstName = document.getElementById("Name");
-let lastName = document.getElementById("Surnunme");
+let lastName = document.getElementById("Surnume");
 let username = document.getElementById("username");
 let email = document.getElementById("email");
 let country = document.getElementById("country-select");
