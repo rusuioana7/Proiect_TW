@@ -12,7 +12,7 @@
 <section>
     <h3>Specificatii pentru cerintele software</h3>
     <ul>
-        <li>Aplicatia web trebuie sa fie dezvoltata folosind HTML, CSS. </li>
+        <li>Aplicatia web trebuie sa fie dezvoltata folosind HTML, CSS, JavaScript, Node.js. </li>
         <li>  Aplicatia trebuie sa utilizeze un API REST propriu pentru a obtine datele publice furnizate de Eurostat.</li>
         <li> Utilizatorii trebuie sa poata selecta diferite criterii pentru a genera statistici si comparatii precum:
             <ul>
@@ -130,10 +130,10 @@
             Sisteme de operare: Windows, Linux.
         </li>
         <li>
-            Pentru serverul web: PhP
+            Pentru serverul web: Node.js
         </li>
         <li>
-            Limbaje de programare: HTML, CSS, PhP
+            Limbaje de programare: HTML, CSS, JavaScript
         </li>
         <li> Baza de date MySQL.</li>
     </ul>
@@ -177,10 +177,10 @@
         <li>Sign Up- cand se adauga un user nou in baza de date;</li>
         <li>Login- cand se va cauta utilizatorul in baza de date pentru a verifica existenta acestuia;</li>
         <li>Log out- pentru a sti ca utilizatorul nu mai este logat;</li>
-        <li>My Profile- cand utilizatorul isi actualizeaza datele contului.</li>
+        <li>My Profile- cand utilizatorul isi vizualizeaza datele contului.</li>
     </ul>
     </p>
-    <p>De asemenea, se va folosi baza de date pentru a imorta date necesare din baza de date Eurostat.</p>
+    <p>De asemenea, se va folosi baza de date pentru a importa date necesare din baza de date Eurostat.</p>
 </section>
 <h2>Caracteristicile sistemului</h2>
 <section>
@@ -202,15 +202,31 @@
     </ul>
     </p>
     <h3>3. Creare cont/ logare</h3>
-    <p>Aceasta functie stabileste statutul unui utilizator (autentificat/ neautentificat/ neinregistrat), permitant trecerea de la un statut la altul.</p>
+    <p>Aceasta functie stabileste statutul unui utilizator (autentificat/ neautentificat/ neinregistrat), permitant trecerea de la un statut la altul.
+    Utilizatorul se poate loga doar daca introduce date valide, existente.</p>
+    <ul><u>Tehnologii folosite: </u>
+        <li>Endpoint: /api/auth/login si /api/auth/register </li>
+        <li>    Metoda folosită: POST </li>
+     <li>   Justificare: trimitem ce completează userul și primim înapoi un token dacă logarea/sign up ul e reușit.</li></ul>
     <h3>4. Butonul Home</h3>
     <p>Pagina pune la dispozitie titlu, text relevant contextului obezitatii, impreuna cu restul navbar-ului.</p>
     <h3>5. Butonul About</h3>
     <p>Pagina pune la dispozitie informatii despre scopul paginilor "Statistics" si "Comparison", butoanele "Read More"
         redirectionand utilizatorii catre aceste pagini, oferindu-le sansa de a vizualiza si compara statistici.</p>
     <h3>6. Butonul My Profile</h3>
-    <p>Permite utilizatorilor posibilitatea de a-si actualiza datele personale, avand totodata si scop de securitate,
-        permitand schimbarea parolei. </p>
+    <p>Permite utilizatorilor posibilitatea de a-si vizualiza datele personale, avand totodata si posibilitatea de a-si sterge contul. </p>
+    <ul><u>Tehnologii folosite: </u>
+
+    <li>Endpoint: /profile/  </li>
+        <li>Metoda: POST
+        </li>
+        <li> Justificare: pentru a încărca datele utilizatorului. Trimitem emailul salvat în local storage și primim datele lui pentru a le afișa
+        </li>
+        <li>Endpoint: /profileDelete/</li>
+        <li>Metoda: DELETE</li>
+        <li>Justificare: pentru a trimite cererea ca userul să fie șters din baza de date
+        </li>
+    </ul>
     <h3>7. Butonul Statistics</h3>
     <p>Redirectioneaza catre o pagina interactiva unde utilizatorul poate
         filtra tara si anul, pentru a vedea statistici pentru BMI.
