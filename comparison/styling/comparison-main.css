@@ -203,7 +203,7 @@ header .navbar .menu a:hover {
     padding: 10px 20px;
     background-color: brown;
     transition: 0.4s;
-    max-height: 2vh;
+    max-height: 5vh;
     min-width: 5vw;
     flex-basis: calc(10% - 20px);
     margin-right: 0.1em;
