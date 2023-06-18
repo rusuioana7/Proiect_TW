@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "mongodb": "^5.5.0"
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^5.5.0",
+    "mysql": "^2.18.1"
   }
 }
