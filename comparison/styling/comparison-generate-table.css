@@ -78,7 +78,7 @@ header .navbar .menu a:hover {
 
 
 
-header .navbar .button {
+header .navbar .toggle-btn {
     text-decoration: none;
     text-align: center;
     margin-top: 1vh;
@@ -96,12 +96,12 @@ header .navbar .button {
     width: 20vw;
 }
 
-.button a {
+.toggle-btn a {
     font-size: 0.5em;
     color: #00F00F;
 }
 
-header .navbar .button:hover {
+header .navbar .toggle-btn:hover {
     background-color: transparent;
     color: limegreen;
     border: 1px solid green;
@@ -144,7 +144,7 @@ header .navbar .button:hover {
         font-size: 1em;
     }
 
-    .button a {
+    .toggle-btn a {
         font-size: 1em;
     }
 
