@@ -10,68 +10,70 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo">Logo</div>
-            <div class="menu">
-                <a href="../../homepage_login_register/homepage0.html"><i class="fas fa-house"></i><span>Home</span></a>
-                <a href="../../logo_myProfile_about/aboutUsPage.html"><i
-                        class="fa-solid fa-circle-info"></i><span>About</span></a>
-                <a href="../../logo_myProfile_about/myProfile.html"><i class="fas fa-user"></i><span>My
+
+<header>
+    <div class="navbar">
+        <div class="logo">Logo</div>
+        <div class="menu">
+            <a href="../../homepage_login_register/homepage0.html"><i class="fas fa-house"></i><span>Home</span></a>
+            <a href="../../logo_myProfile_about/aboutUsPage.html"><i
+                    class="fa-solid fa-circle-info"></i><span>About</span></a>
+            <a href="../../logo_myProfile_about/myProfile.html"><i class="fas fa-user"></i><span>My
                         Profile</span></a>
-                <a href="../pages/statistics-main.html"><i class="fas fa-chart-simple"></i><span>Statistics</span></a>
-                <a href="../../comparison/pages/comparison-main.html"><i
-                        class="fas fa-not-equal"></i><span>Comparison</span></a>
-            </div>
-            <button type="button" class="toggle-btn" onclick="logout()">LogOut</button>
+            <a href="../pages/statistics-main.html"><i class="fas fa-chart-simple"></i><span>Statistics</span></a>
+            <a href="../../comparison/pages/comparison-main.html"><i
+                    class="fas fa-not-equal"></i><span>Comparison</span></a>
         </div>
-
-        <h1>Obesity Visualizer</h1>
-
-
-    </header>
-    <div class="information">
-
-        <h2 class="title">Details</h2>
-
-        <p class="text">
-            Format: Line</p>
-        <p class="text">
-            Region: Belgium</p>
-        <p class="text">
-            Year: All years available</p>
-
-
-    </div>
-    <div class="table">
-        <img src="../images/line-belgium-all-years.png" alt="line-belgium-all-years">
-    </div>
-    <div class="select-menu-container">
-        <div class="select-format">
-            <label class="labels>">Export format:</label>
-        </div>
-        <section id="format">
-            <select id="format-select">
-                <option value="CSV">CSV</option>
-                <option value="WebP">WebP</option>
-                <option value="SVG">SVG</option>
-
-            </select>
-            <div id="chart"></div>
-        </section>
-
-        <div class="select-menu">
-            <div class="select-button">
-                <i class="fa-solid fa-download"></i>
-
-                <label> Export Line</label>
-
-            </div>
-        </div>
+        <button type="button" class="toggle-btn" onclick="logout()">LogOut</button>
     </div>
 
+    <h1>Obesity Visualizer</h1>
 
-    <script src="../homepage_login_register/logout.js" ></script>
+</header>
+<div class="information">
+
+    <h2 class="title">Details</h2>
+
+    <p class="text">
+        Format: Line</p>
+    <p class="text">
+        Region: Belgium</p>
+    <p class="text">
+        Year: All years available</p>
+
+
+</div>
+<div class="table">
+    <img src="../images/line-belgium-all-years.png" alt="line-belgium-all-years">
+</div>
+<div class="select-menu-container">
+    <div class="select-format">
+        <label class="labels>">Export format:</label>
+    </div>
+    <section id="format">
+        <select id="format-select">
+            <option value="CSV">CSV</option>
+            <option value="WebP">WebP</option>
+            <option value="SVG">SVG</option>
+
+        </select>
+        <div id="chart"></div>
+    </section>
+
+    <div class="select-menu">
+        <div class="select-button">
+            <i class="fa-solid fa-download"></i>
+
+            <label> Export Line</label>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/statsLineChart.js"></script>
+<script src="../../homepage_login_register/logout.js"></script>
+
 
 </body>
 

@@ -1,4 +1,4 @@
-const http = require('http');
+const http = require("http")
 const url = require('url');
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
@@ -31,6 +31,31 @@ const server = http.createServer(async (req, res) => {
         res.end();
         return;
     }
+
+    if (req.url.substring(0, 11) === '/statistics') {
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', async () => {
+            fetch('http://localhost:8082/api/v1/statistics/' + req.url.substring(12,req.url.length),
+                {method: 'GET'})
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                   // let dataa = parseInt(data.number);
+                    res.writeHead(200, {"Content-Type": "application/json"});
+                    console.log(data.number);
+                    res.write(
+                        JSON.stringify({year: data.number})
+                    );
+                    res.end();
+                })
+        });
+
+    }
+
 
     const reqUrl = url.parse(req.url, true);
     // ------------------------------------------- LOGIN --------------------------------------------------------------------
@@ -175,6 +200,7 @@ const server = http.createServer(async (req, res) => {
                 res.end('Internal server error');
             }
         });
+
     }// ------------------------------------------ Informations ------------------------------------------------------------
     if (reqUrl.pathname.startsWith('/api/data') && req.method === 'POST') {
         let url = new URLSearchParams(reqUrl.query);
@@ -289,7 +315,6 @@ const server = http.createServer(async (req, res) => {
                 }
             })
         }
-
     }
 
 })

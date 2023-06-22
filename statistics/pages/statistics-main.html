@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="navbar">
             <div class="logo">Logo</div>
@@ -19,168 +20,174 @@
                 <a href="../../logo_myProfile_about/aboutUsPage.html"><i
                         class="fa-solid fa-circle-info"></i><span>About</span></a>
                 <a href="../../logo_myProfile_about/myProfile.html"><i class="fas fa-user"></i><span>My
+
                         Profile</span></a>
-                <a href="../pages/statistics-main.html"><i class="fas fa-chart-simple"></i><span>Statistics</span></a>
-                <a href="../../comparison/pages/comparison-main.html"><i
-                        class="fas fa-not-equal"></i><span>Comparison</span></a>
+            <a href="../pages/statistics-main.html"><i class="fas fa-chart-simple"></i><span>Statistics</span></a>
+            <a href="../../assets/html/comparison-main.html"><i
+                    class="fas fa-not-equal"></i><span>Comparison</span></a>
+        </div>
+        <button type="button" class="toggle-btn" onclick="logout()">LogOut</button>
+    </div>
+
+    <h1>Obesity Visualizer</h1>
+
+
+</header>
+<div class="information">
+
+    <h2 class="title">Obesity rate - using BMI (Body Mass Index)</h2>
+
+    <p class="text">
+        The indicator measures the share of obese people based on their body mass index (BMI). BMI is
+        defined as the weight in kilos divided by the square of the height in meters. People aged 18 years or over
+        are considered obese with a BMI equal or greater than 30. Other categories are: underweight (BMI less than
+        18.5), normal weight (BMI between 18.5 and less than 25), and pre-obese (BMI between 25 and less than 30).
+        The category overweight (BMI equal or greater than 25) combines the two categories pre-obese and
+        obese.</p>
+
+
+</div>
+<div class="space"></div>
+
+<div class="choosefilter">
+
+    <h3 class="filter">Choose filter:</h3>
+
+
+    <div class="select-menu-container">
+        <div class="select-country">
+            <label class="labels>">Select Country:</label>
+        </div>
+        <section id="country">
+            <select id="country-select" onclick="getCountry();getStats()">
+                <option>Albania</option>
+                <option value="Austria">Andora</option>
+                <option value="Albania">Belarus</option>
+                <option value="Austria">Belgium</option>
+                <option value="Albania">Croatia</option>
+                <option value="Austria">Cyprus</option>
+                <option value="Albania">Denmark</option>
+                <option value="Austria">Estonia</option>
+                <option value="Albania">Finland</option>
+                <option value="Austria">Georgia</option>
+                <option value="Albania">Hungary</option>
+                <option value="Austria">Iceland</option>
+                <option value="Albania">Kosovo</option>
+                <option value="Austria">Lithuania</option>
+                <option value="Albania">Moldova</option>
+                <option value="Austria">Netherlands</option>
+                <option value="Albania">Poland</option>
+                <option value="Austria">Romania</option>
+                <option value="Albania">Serbia</option>
+                <option value="Austria">Spain</option>
+                <option value="Albania">Turkey</option>
+                <option value="Austria">Ukraine</option>
+                <option value="Albania">Vatican City</option>
+            </select>
+            <div id="chart"></div>
+        </section>
+
+        <div class="select-year">
+            <label class="labels>">Select Year:</label>
+        </div>
+        <section id="year">
+            <select id="year-select" onclick="getYear();getStats();">
+                <option value="All years available">All years available</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2014">2014</option>
+
+            </select>
+            <div id="chart"></div>
+        </section>
+    </div>
+</div>
+
+
+</div>
+<div class="chooseformat">
+
+    <h3 class="format">Choose format:</h3>
+
+
+    <div class="select-menu-container">
+
+
+        <div class="select-menu">
+
+
+            <div class="content">
+
+                <div class="generate">
+                    <a onclick=getStats("table");>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <label> Generate Table</label>
+
+
+                </div>
+
             </div>
-            <button type="button" class="toggle-btn" onclick="logout()">LogOut</button>
+
         </div>
 
-        <h1>Obesity Visualizer</h1>
 
 
-    </header>
-    <div class="information">
-
-        <h2 class="title">Obesity rate - using BMI (Body Mass Index)</h2>
-
-        <p class="text">
-            The indicator measures the share of obese people based on their body mass index (BMI). BMI is
-            defined as the weight in kilos divided by the square of the height in meters. People aged 18 years or over
-            are considered obese with a BMI equal or greater than 30. Other categories are: underweight (BMI less than
-            18.5), normal weight (BMI between 18.5 and less than 25), and pre-obese (BMI between 25 and less than 30).
-            The category overweight (BMI equal or greater than 25) combines the two categories pre-obese and
-            obese.</p>
+        <div class="select-menu">
+            <div class="content">
+                <div class="generate">
+                    <a onclick=getStats("line");>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <label> Generate Line</label>
 
 
-    </div>
-    <div class="space"></div>
-
-    <div class="choosefilter">
-
-        <h3 class="filter">Choose filter:</h3>
-
-
-        <div class="select-menu-container">
-            <div class="select-country">
-                <label class="labels>">Select Country:</label>
-            </div>
-            <section id="country">
-                <select id="country-select">
-                    <option>Albania</option>
-                    <option value="Austria">Andora</option>
-                    <option value="Albania">Belarus</option>
-                    <option value="Austria">Belgium</option>
-                    <option value="Albania">Croatia</option>
-                    <option value="Austria">Cyprus</option>
-                    <option value="Albania">Denmark</option>
-                    <option value="Austria">Estonia</option>
-                    <option value="Albania">Finland</option>
-                    <option value="Austria">Georgia</option>
-                    <option value="Albania">Hungary</option>
-                    <option value="Austria">Iceland</option>
-                    <option value="Albania">Kosovo</option>
-                    <option value="Austria">Lithuania</option>
-                    <option value="Albania">Moldova</option>
-                    <option value="Austria">Netherlands</option>
-                    <option value="Albania">Poland</option>
-                    <option value="Austria">Romania</option>
-                    <option value="Albania">Serbia</option>
-                    <option value="Austria">Spain</option>
-                    <option value="Albania">Turkey</option>
-                    <option value="Austria">Ukraine</option>
-                    <option value="Albania">Vatican City</option>
-                </select>
-                <div id="chart"></div>
-            </section>
-
-            <div class="select-year">
-                <label class="labels>">Select Year:</label>
-            </div>
-            <section id="year">
-                <select id="year-select">
-                    <option value="All years available">All years available</option>
-                    <option value="2019">2019</option>
-                    <option value="2018">2018</option>
-                    <option value="2017">2017</option>
-                    <option value="2014">2014</option>
-
-                </select>
-                <div id="chart"></div>
-            </section>
-        </div>
-    </div>
-
-
-    </div>
-    <div class="chooseformat">
-
-        <h3 class="format">Choose format:</h3>
-
-
-        <div class="select-menu-container">
-
-
-            <div class="select-menu">
-
-
-                <div class="content">
-
-                    <div class="generate">
-                        <a href="statistics-generated-table.html">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <label> Generate Table</label>
-
-
-                    </div>
 
                 </div>
             </div>
 
 
-
-            <div class="select-menu">
-                <div class="content">
-                    <div class="generate">
-                        <a href="statistics-generate-line.html">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <label> Generate Line</label>
-
-
-                    </div>
-                </div>
-
-
-            </div>
-
-
-
-            <div class="select-menu">
-                <div class="content">
-                    <div class="generate">
-                        <a href="statistics-generate-bar.html">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <label> Generate Bar</label>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-            <div class="select-menu">
-                <div class="content">
-                    <div class="generate">
-                        <a href="statistics-generate-map.html">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <label> Generate Map</label>
-
-
-                    </div>
-                </div>
-
-
-            </div>
-            </a>
 
         </div>
+
+
+
+        <div class="select-menu">
+            <div class="content">
+                <div class="generate">
+                    <a onclick=getStats("bar");>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <label> Generate Bar</label>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="select-menu">
+            <div class="content">
+                <div class="generate">
+                    <a href="statistics-generate-map.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <label> Generate Map</label>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        </a>
+
     </div>
-    <script src="../homepage_login_register/logout.js" ></script>
+
+</div>
+<script src="../js/stats.js" ></script>
+<script src="../homepage_login_register/logout.js" ></script>
 
 </body>
 
