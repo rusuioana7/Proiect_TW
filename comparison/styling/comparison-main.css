@@ -182,7 +182,17 @@ header .navbar .menu a:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.button {
+@media (max-width: 767px) {
+    #open-button{
+        padding: 3px 8px;
+        margin-top:1em;
+    }
+}
+
+
+
+
+.toggle-btn {
     text-decoration: none;
     text-align: center;
     margin-top: 1vh;
@@ -193,19 +203,19 @@ header .navbar .menu a:hover {
     padding: 10px 20px;
     background-color: brown;
     transition: 0.4s;
-    max-height: 2vh;
+    max-height: 5vh;
     min-width: 5vw;
     flex-basis: calc(10% - 20px);
     margin-right: 0.1em;
     width: 20vw;
 }
 
-.button a {
+.toggle-btn a {
     font-size: 0.5em;
     color: #00F00F;
 }
 
-header .navbar .button:hover {
+header .navbar .toggle-btn:hover {
     background-color: transparent;
     color: limegreen;
     border: 1px solid green;
@@ -248,7 +258,7 @@ header .navbar .button:hover {
         font-size: 1em;
     }
 
-    .button a {
+    .toggle-btn a {
         font-size: 1em;
     }
 
@@ -388,22 +398,10 @@ body .information {
     flex-direction: row;
 }
 
-.select-country {
-    color: #00FF00;
-    font-size: 1.2em;
-}
 
-#country-select {
-    background-color: #091836;
-    padding: 0.2em;
-    color: #00FF00;
-    margin-left: 0.625em;
-    font-family: 'Josefin Sans', sans-serif;
-
-}
 
 .select-year {
-    margin-left: 30em;
+    margin-left: 15em;
     color: #00FF00;
     font-size: 1.5em;
     margin-top: -5vh;
@@ -413,7 +411,7 @@ body .information {
     background-color: #091836;
     padding: 0.2em;
     color: #00FF00;
-    margin-left: 65em;
+    margin-left: 37em;
     font-family: 'Josefin Sans', sans-serif;
     position: relative;
     top: -33px;
@@ -421,6 +419,23 @@ body .information {
     height: 3em;
 
 }
+@media (max-width: 700px) {
+    .select-year {
+        margin-left: 18em;
+        font-size: 1em;
+    }
+
+    #year-select {
+        margin-left: 20em;
+        width: 5em;
+        height: 2em;
+        margin-top: 3em;
+    }
+}
+
+
+
+
 
 option[value="2019"] {
     font-size: 1.3em; /* Adjust the value as needed */
@@ -443,6 +458,9 @@ option[value="2014"] {
 
     .option .option-text {
         font-size: 1.125em;
+    }
+    .select-year{
+        margin-left: 5em;
     }
 }
 
@@ -481,6 +499,7 @@ option[value="2014"] {
     border-bottom-right-radius: 15px;
     padding: 0.625em;
     margin-bottom: 1.25em;
+    justify-content: space-between;
 
 }
 

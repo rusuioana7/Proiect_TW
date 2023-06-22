@@ -87,10 +87,12 @@ header .navbar .menu a:hover {
     }
 }
 
-.button {
+
+.toggle-btn {
     text-decoration: none;
     text-align: center;
-    margin-top: 1vh;
+    margin-top: 1em;
+    position: relative;
     color: #00F00F;
     font-size: 1em;
     border: 1px solid white;
@@ -98,20 +100,15 @@ header .navbar .menu a:hover {
     padding: 10px 20px;
     background-color: brown;
     transition: 0.4s;
-    max-height: 2vh;
+    max-height: 5vh;
     min-width: 5vw;
     flex-basis: calc(10% - 20px);
     margin-right: 0.1em;
-    width: 20vw;
+    width: 30vw;
 
 }
 
-.button a {
-    font-size: 0.5em;
-    color: #00F00F;
-}
-
-header .navbar .button:hover {
+header .navbar .toggle-btn:hover {
     background-color: transparent;
     color: limegreen;
     border: 1px solid green;
@@ -169,7 +166,7 @@ p {
         font-size: 1em;
     }
 
-    .button a {
+    .toggle-btn a {
         font-size: 1em;
     }
 

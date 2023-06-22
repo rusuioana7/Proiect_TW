@@ -56,6 +56,7 @@ const server = http.createServer(async (req, res) => {
 
     }
 
+
     const reqUrl = url.parse(req.url, true);
     // ------------------------------------------- LOGIN --------------------------------------------------------------------
     if (reqUrl.pathname === '/api/auth/login' && req.method === 'POST') {
@@ -199,6 +200,121 @@ const server = http.createServer(async (req, res) => {
                 res.end('Internal server error');
             }
         });
+
+    }// ------------------------------------------ Informations ------------------------------------------------------------
+    if (reqUrl.pathname.startsWith('/api/data') && req.method === 'POST') {
+        let url = new URLSearchParams(reqUrl.query);
+        let y = reqUrl.query.year;
+        let c = reqUrl.query.country;
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        if(y !== "all" && !c.includes(',')){
+            req.on('end', async () => {
+                try {
+                    let query = "SELECT country, c." + y + " FROM countries c WHERE c.country = ?";
+                    let formatedQuery = mysql.format(query, [c]);
+                    console.log(formatedQuery);
+                    connection.query(formatedQuery, async (error, results, fields) => {
+
+                        if (error) {
+                            res.writeHead(500, {'Content-Type': 'text/plain'});
+                            res.end('Internal server error');
+                        }
+                        if (results.length === 0) {
+                            res.writeHead(400, {'Content-Type': 'text/plain'});
+                            res.end('Information not found');
+                        } else {
+                            res.writeHead(200, {'Content-Type': 'application/json'});
+                            res.end(JSON.stringify({results}));
+                        }
+                    });
+                } catch (error) {
+                    res.writeHead(500, {'Content-Type': 'text/plain'});
+                    res.end('Internal server error');
+                }
+            })
+        }
+        else if(y === "all" && !c.includes(',')){
+            req.on('end', async () => {
+                try {
+                    let query = "SELECT * FROM countries WHERE country = ?";
+                    let formatedQuery = mysql.format(query, [c]);
+                    console.log(formatedQuery);
+                    connection.query(formatedQuery, async (error, results, fields) => {
+
+                        if (error) {
+                            res.writeHead(500, {'Content-Type': 'text/plain'});
+                            res.end('Internal server error');
+                        }
+                        if (results.length === 0) {
+                            res.writeHead(400, {'Content-Type': 'text/plain'});
+                            res.end('Information not found');
+                        } else {
+                            res.writeHead(200, {'Content-Type': 'application/json'});
+                            res.end(JSON.stringify({results}));
+                        }
+                    });
+                } catch (error) {
+                    res.writeHead(500, {'Content-Type': 'text/plain'});
+                    res.end('Internal server error');
+                }
+            })
+        }
+        else if(y !== "all" && c.includes(',')){
+            let countryList = c.replaceAll(",", "\',\'");
+            req.on('end', async () => {
+                try {
+                    let query = "SELECT c.country, c." + y + " FROM countries c WHERE country IN (\'" + countryList + "\')";
+                    console.log(query);
+                    connection.query(query, async (error, results, fields) => {
+
+                        if (error) {
+                            res.writeHead(500, {'Content-Type': 'text/plain'});
+                            res.end('Internal server error');
+                        }
+                        if (results.length === 0) {
+                            res.writeHead(400, {'Content-Type': 'text/plain'});
+                            res.end('Information not found');
+                        } else {
+                            res.writeHead(200, {'Content-Type': 'application/json'});
+                            res.end(JSON.stringify({results}));
+                        }
+                    });
+                } catch (error) {
+                    res.writeHead(500, {'Content-Type': 'text/plain'});
+                    res.end('Internal server error');
+                }
+            })
+        }
+        else if(y === "all" && c.includes(',')){
+            let countryList = c.replaceAll(",", "\',\'");
+            console.log(countryList);
+            req.on('end', async () => {
+                try {
+                    let query = "SELECT * FROM countries WHERE country IN (\'" + countryList + "\')";
+                    console.log(query);
+                    connection.query(query, async (error, results, fields) => {
+
+                        if (error) {
+                            res.writeHead(500, {'Content-Type': 'text/plain'});
+                            res.end('Internal server error');
+                        }
+                        if (results.length === 0) {
+                            res.writeHead(400, {'Content-Type': 'text/plain'});
+                            res.end('Information not found');
+                        } else {
+                            res.writeHead(200, {'Content-Type': 'application/json'});
+                            res.end(JSON.stringify({results}));
+                        }
+                    });
+                } catch (error) {
+                    res.writeHead(500, {'Content-Type': 'text/plain'});
+                    res.end('Internal server error');
+                }
+            })
+        }
     }
 
 })
