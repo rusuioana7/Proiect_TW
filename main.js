@@ -32,6 +32,53 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
+    //------------render html, css, js---------
+    const reqRL = url.parse(req.url, true);
+    let pg=req.url.substring(req.url.lastIndexOf("/"));
+    if(pg==="statisticsHomepage"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
+        fs.readFile("./statistics/pages/statistics-main.html", function (error, htmlContent) {
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(htmlContent);
+            res.end();
+        });
+    }
+    else if(pg==="statisticsBar"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
+        fs.readFile("./statistics/pages/statistics-generate-bar.html", function (error, htmlContent) {
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(htmlContent);
+            res.end();
+        });
+    }
+    else if(pg==="statisticsLine"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
+        fs.readFile("./statistics/pages/statistics-generate-line.html", function (error, htmlContent) {
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(htmlContent);
+            res.end();
+        });
+    }
+    else if(pg==="statisticsTable"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
+        fs.readFile("./statistics/pages/statistics-generate-table.html", function (error, htmlContent) {
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(htmlContent);
+            res.end();
+        });
+    }
+    else if(pg==="statisticsMap") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
+        fs.readFile("./statistics/pages/statistics-generate-map.html", function (error, htmlContent) {
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(htmlContent);
+            res.end();
+        });
+    }
+    // else if(pg==="statsPage"||pg==="statsBarChart"||pg==="statsLineChart"||pg==="statsLineChart"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
+    //      let page=req.url.substring(req.url.toString().lastIndexOf("/"));
+    //      fs.readFile("./statistics/pages/" + page, function (error, htmlContent) {
+    //          res.writeHead(200, {'Content-Type': 'text/html'})
+    //          res.write(htmlContent);
+    //          res.end();
+    //      });
+    //  }
+//-------------------------------------Statistics-----------------------------------------
     if (req.url.substring(0, 11) === '/statistics') {
         let body = '';
         req.on('data', (chunk) => {
@@ -54,6 +101,38 @@ const server = http.createServer(async (req, res) => {
                 })
         });
 
+    }
+
+
+    //-------------------------------------Comparison-----------------------------------------
+    if (req.url.substring(0, 11) === '/comparison') {
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', async () => {
+            const url = new URL(req.url, `http://${req.headers.host}`);
+            const countries = url.searchParams.getAll('country');
+            const year = url.searchParams.get('year');
+            const queryUrl = `http://localhost:8083/api/v1/comparison?country=${countries.join('&country=')}&year=${year}`;
+
+            fetch(queryUrl, { method: 'GET' })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    console.log(data); // Log the received data
+                    res.write(JSON.stringify(data));
+                    res.end();
+                })
+                .catch((error) => {
+                    console.error(error);
+                    res.writeHead(500, { 'Content-Type': 'application/json' });
+                    res.write(JSON.stringify({ error: 'Internal Server Error' }));
+                    res.end();
+                });
+        });
     }
 
 
