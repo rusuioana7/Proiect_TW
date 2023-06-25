@@ -2,10 +2,15 @@ let country = '', year = '';
 
 function getCountry() {
     country = document.getElementById('country-select').value;
+    console.log(country)
 }
 
 function getYear() {
     year = document.getElementById('year-select').value;
+    if(year==="All years available"){
+        year="all";
+    }
+    console.log(year);
 }
 
 function getStats(type) {
@@ -26,11 +31,18 @@ function getStats(type) {
     // if(document.location==="statistics-generated-table.html"){
     //     document.getElementById("table").innerHTML+='';
     // }
-    if (type === "table") {
-        window.location = "../pages/statistics-generated-table.html"
-    } else if (type === "line") {
-        window.location = "../pages/statistics-generate-line.html"
-    } else if (type === "bar") {
-        window.location = "../pages/statistics-generate-bar.html"
+    if (year !== "" && country !== "") {
+        if (type === "table") {
+            window.location = country + "/" + year + "/" + "statisticsTable";
+        } else if (type === "line") {
+            window.location = country + "/" + year + "/" + "statisticsLine";
+        } else if (type === "bar") {
+            window.location = country + "/" + year + "/" + "statisticsBar";
+        }
+        else if (type === "map") {
+            window.location = country + "/" + year + "/" + "statisticsMap";
+        }
+    } else {
+        window.alert("Please choose a country and a year first.");
     }
 }

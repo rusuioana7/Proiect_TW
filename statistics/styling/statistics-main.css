@@ -439,7 +439,6 @@ body .information {
 
 .content label {
     color: #00FF00;
-    user-select: none;
     padding-left: 0.3em;
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.125em;
