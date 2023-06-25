@@ -8,8 +8,8 @@ const server = http.createServer(async (request, response) => {
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     const reqMethod = request.method;
     let array= request.url.split("/"); // /api/v1/country/year
-    let country=array[4];
-    let year=array[5];
+    let country=array[3];
+    let year=array[4];
     try {
         switch (reqMethod) {
             case "GET": {

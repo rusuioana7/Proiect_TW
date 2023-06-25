@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styling/statistics-generate-map.css">
+    <link rel="stylesheet" href="http://localhost:8081/../styling/statistics-generate-map.css">
     <script src="https://kit.fontawesome.com/035860ecaf.js"></script>
     <title>StatisticsPage</title>
 </head>
 
-<body>
+<body onload="getChart()">
     <header>
         <div class="navbar">
             <div class="logo">Logo</div>
             <div class="menu">
-                <a href="../../homepage_login_register/homepage0.html"><i class="fas fa-house"></i><span>Home</span></a>
-                <a href="../../logo_myProfile_about/aboutUsPage.html"><i
+                <a href="http://localhost:8081/../../homepage_login_register/homepage0.html"><i class="fas fa-house"></i><span>Home</span></a>
+                <a href="http://localhost:8081/../../logo_myProfile_about/aboutUsPage.html"><i
                         class="fa-solid fa-circle-info"></i><span>About</span></a>
-                <a href="../../logo_myProfile_about/myProfile.html"><i class="fas fa-user"></i><span>My
+                <a href="http://localhost:8081/../../logo_myProfile_about/myProfile.html"><i class="fas fa-user"></i><span>My
                         Profile</span></a>
-                <a href="../pages/statistics-main.html"><i class="fas fa-chart-simple"></i><span>Statistics</span></a>
-                <a href="../../comparison/pages/comparison-main.html"><i
+                <a href="http://localhost:8081/../pages/statistics-main.html"><i class="fas fa-chart-simple"></i><span>Statistics</span></a>
+                <a href="http://localhost:8081/../../comparison/pages/comparison-main.html"><i
                         class="fas fa-not-equal"></i><span>Comparison</span></a>
             </div>
             <button type="button" class="toggle-btn" onclick="logout()">LogOut</button>
@@ -43,25 +43,24 @@
 
 
     </div>
-    <div class="table">
-        <img src="../images/map-belgium-2017.png" alt="map-belgium-2017">
+    <div id="chartCanvas">
     </div>
     <div class="select-menu-container">
         <div class="select-format">
-            <label class="labels>">Export format:</label>
+            <label class="labels" for="format">Export format:</label>
         </div>
         <section id="format">
-            <select id="format-select">
-                <option value="CSV">CSV</option>
-                <option value="WebP">WebP</option>
-                <option value="SVG">SVG</option>
+            <select name="format" id="format-select" title="ok">
+                <option name="CSV" value="CSV">CSV</option>
+                <option name="WebP" value="WebP">WebP</option>
+                <option name="SVG" value="SVG">SVG</option>
 
             </select>
-            <div id="chart"></div>
+
         </section>
 
         <div class="select-menu">
-            <div class="select-button">
+            <div class="select-button" onclick="download()">
                 <i class="fa-solid fa-download"></i>
 
                 <label > Export Map</label>
@@ -70,7 +69,11 @@
         </div>
     </div>
 
-    <script src="../../homepage_login_register/logout.js" ></script>
+
+
+    <script src="http://localhost:8081/../js/statsMapChart.js"></script>
+    <script src="http://localhost:8081/../../homepage_login_register/logout.js"></script>
+
 
 
 </body>

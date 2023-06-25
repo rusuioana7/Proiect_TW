@@ -3,6 +3,9 @@ const url = require('url');
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const fs = require("fs");
+
+
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -13,6 +16,7 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err) {
     if (err) throw err;
+
     console.log("Connected to database!");
 });
 connection.query("SELECT * FROM users", function (err, result, fields) {
@@ -21,91 +25,127 @@ connection.query("SELECT * FROM users", function (err, result, fields) {
 });
 
 
+
 const server = http.createServer(async (req, res) => {
-    console.log(req.method);
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    if (req.method === 'OPTIONS') {
-        res.writeHead(204);
-        res.end();
-        return;
-    }
+        console.log(req.method);
+        console.log(req.url);
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+        if (req.method === 'OPTIONS') {
+            res.writeHead(204);
+            res.end();
+            return;
+        }
 
-    //------------render html, css, js---------
-    const reqRL = url.parse(req.url, true);
-    let pg=req.url.substring(req.url.lastIndexOf("/"));
-    if(pg==="statisticsHomepage"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
-        fs.readFile("./statistics/pages/statistics-main.html", function (error, htmlContent) {
-            res.writeHead(200, {'Content-Type': 'text/html'})
-            res.write(htmlContent);
-            res.end();
-        });
-    }
-    else if(pg==="statisticsBar"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
-        fs.readFile("./statistics/pages/statistics-generate-bar.html", function (error, htmlContent) {
-            res.writeHead(200, {'Content-Type': 'text/html'})
-            res.write(htmlContent);
-            res.end();
-        });
-    }
-    else if(pg==="statisticsLine"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
-        fs.readFile("./statistics/pages/statistics-generate-line.html", function (error, htmlContent) {
-            res.writeHead(200, {'Content-Type': 'text/html'})
-            res.write(htmlContent);
-            res.end();
-        });
-    }
-    else if(pg==="statisticsTable"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
-        fs.readFile("./statistics/pages/statistics-generate-table.html", function (error, htmlContent) {
-            res.writeHead(200, {'Content-Type': 'text/html'})
-            res.write(htmlContent);
-            res.end();
-        });
-    }
-    else if(pg==="statisticsMap") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
-        fs.readFile("./statistics/pages/statistics-generate-map.html", function (error, htmlContent) {
-            res.writeHead(200, {'Content-Type': 'text/html'})
-            res.write(htmlContent);
-            res.end();
-        });
-    }
-    // else if(pg==="statsPage"||pg==="statsBarChart"||pg==="statsLineChart"||pg==="statsLineChart"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
-    //      let page=req.url.substring(req.url.toString().lastIndexOf("/"));
-    //      fs.readFile("./statistics/pages/" + page, function (error, htmlContent) {
-    //          res.writeHead(200, {'Content-Type': 'text/html'})
-    //          res.write(htmlContent);
-    //          res.end();
-    //      });
-    //  }
+
+        if (req.url.substring(0, 11) === '/statistics') {
+            let body = '';
+            req.on('data', (chunk) => {
+                body += chunk;
+            });
+            req.on('end', async () => {
+                fetch('http://localhost:8082/api/v1/statistics/' + req.url.substring(12, req.url.length),
+                    {method: 'GET'})
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((data) => {
+                        // let dataa = parseInt(data.number);
+                        res.writeHead(200, {"Content-Type": "application/json"});
+                        console.log(data.number);
+                        res.write(
+                            JSON.stringify({year: data.number})
+                        );
+                        res.end();
+                    })
+            });
+        }
+        //------------render html, css, js---------
+        const reqRL = url.parse(req.url, true);
+        let pg = req.url.substring(req.url.lastIndexOf("/") + 1);
+        if (pg === "statisticsHomepage") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
+            fs.readFile("./statistics/pages/statistics-main.html", function (error, htmlContent) {
+                res.writeHead(200, {'Content-Type': 'text/html'})
+                res.write(htmlContent);
+                res.end();
+            });
+        } else if (pg === "statisticsBar") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
+            fs.readFile("./statistics/pages/statistics-generate-bar.html", function (error, htmlContent) {
+                res.writeHead(200, {'Content-Type': 'text/html'})
+                res.write(htmlContent);
+                res.end();
+
+
+            });
+        } else if (pg === "statisticsLine") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
+            fs.readFile("./statistics/pages/statistics-generate-line.html", function (error, htmlContent) {
+                res.writeHead(200, {'Content-Type': 'text/html'})
+                res.write(htmlContent);
+                res.end();
+            });
+        } else if (pg === "statisticsTable") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
+            fs.readFile("./statistics/pages/statistics-generated-table.html", function (error, htmlContent) {
+                res.writeHead(200, {'Content-Type': 'text/html'})
+                res.write(htmlContent);
+                res.end();
+            });
+        } else if (pg === "statisticsMap") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
+            fs.readFile("./statistics/pages/statistics-generate-map.html", function (error, htmlContent) {
+                res.writeHead(200, {'Content-Type': 'text/html'})
+                res.write(htmlContent);
+                res.end();
+            });
+        } else if (req.url === "/styling/statistics-main.css" || req.url === "/styling/statistics-generate-bar.css" || req.url === "/styling/statistics-generate-line.css" || req.url === "/styling/statistics-generate-table.css" || req.url === "/styling/statistics-generate-map.css") {
+            fs.readFile("./statistics" + req.url, function (error, htmlContent) {
+                res.writeHead(200, {'Content-Type': 'text/css'})
+                res.write(htmlContent);
+                res.end();
+
+            });
+        } else if (req.url === "/js/stats.js" || req.url === "/js/statsBarChart.js" || req.url === "/js/statsTableChart.js" || req.url === "/js/statsLineChart.js" || req.url === "/js/statsMapChart.js") {
+            fs.readFile("./statistics" + req.url, function (error, htmlContent) {
+                res.writeHead(200, {'Content-Type': 'text/javascript'})
+                res.write(htmlContent);
+                res.end();
+            });
+        } else if (req.url === "/homepage_login_register/background0.png") {
+            fs.readFile("." + req.url, function (error, htmlContent) {
+                res.writeHead(200, {'Content-Type': 'image/png'})
+                res.write(htmlContent);
+                res.end();
+            });
+        }
+
+
 //-------------------------------------Statistics-----------------------------------------
-    if (req.url.substring(0, 11) === '/statistics') {
-        let body = '';
-        req.on('data', (chunk) => {
-            body += chunk;
-        });
-        req.on('end', async () => {
-            fetch('http://localhost:8082/api/v1/statistics/' + req.url.substring(12,req.url.length),
-                {method: 'GET'})
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                   // let dataa = parseInt(data.number);
-                    res.writeHead(200, {"Content-Type": "application/json"});
-                    console.log(data.number);
-                    res.write(
-                        JSON.stringify({year: data.number})
-                    );
-                    res.end();
-                })
-        });
-
-    }
-
+//     else if(req.url.substring(0, 11) === '/statistics') {
+//         let body = '';
+//         req.on('data', (chunk) => {
+//             body += chunk;
+//         });
+//         req.on('end', async () => {
+//             fetch('http://localhost:8082/api/v1/statistics/' + req.url.substring(12,req.url.length),
+//                 {method: 'GET'})
+//                 .then((response) => {
+//                     return response.json();
+//                 })
+//                 .then((data) => {
+//                    // let dataa = parseInt(data.number);
+//                     res.writeHead(200, {"Content-Type": "application/json"});
+//                     console.log(data.number);
+//                     res.write(
+//                         JSON.stringify({year: data.number})
+//                     );
+//                     res.end()
+//                 })
+//         });
+//
+//     }
 
     //-------------------------------------Comparison-----------------------------------------
-    if (req.url.substring(0, 11) === '/comparison') {
+    else if (req.url.substring(0, 11) === '/comparison') {
+
         let body = '';
         req.on('data', (chunk) => {
             body += chunk;
@@ -134,6 +174,7 @@ const server = http.createServer(async (req, res) => {
                 });
         });
     }
+
 
 
     const reqUrl = url.parse(req.url, true);
@@ -565,6 +606,8 @@ const server = http.createServer(async (req, res) => {
 
 
 
+
+
 function generateToken(email) {
     const secretKey = 'my-secret-key';
     const token = jwt.sign({email}, secretKey, {expiresIn: '24h'});
@@ -578,5 +621,5 @@ function hashPassword(password) {
 }
 
 server.listen(8081, () => {
-    console.log('Server running at http://localhost:8081/');
+    console.log('Server running at http://localhost:8081');
 });
