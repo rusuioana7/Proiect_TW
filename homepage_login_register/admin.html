@@ -1,50 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../homepage_login_register/admin.css">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesity Visualizator</title>
+
+
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="admin.css">
+
 </head>
+
 <body>
-<header>
-    <div class="navbar">
 
-        <button type="button" class="toggle-btn" onclick="logout()">LogOut</button>
+<!-- header section starts  -->
+
+<header class="header">
+
+
+
+    <h1 style="color: #00F00F;">Users Management System</h1>
+    <div class="buttonContainer">
+        <button id="logout">Logout</button>
     </div>
-
-    <h1>Obesity Visualizer</h1>
-
-
 </header>
 
 
-    <div class="users">
-
-        <h2 class="title">Users</h2>
-
-        <table id="userTable">
-            <thead>
-            <tr>
-                <th>Email</th>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Password Hash</th>
-                <th>Address</th>
-                <th>Notifications</th>
-                <th>Role</th>
-                <th>Actions</th>
-
-            </tr>
-            </thead>
-            <tbody id="userList"></tbody>
-        </table>
+<section class="home" id="home">
 
 
-    </div>
-<div class="space"></div>
+    <table id="userTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>FIRSTNAME</th>
+            <th>LASTNAME</th>
+            <th>EMAIL</th>
+            <th>USERNAME</th>
+            <th>HASH</th>
+            <th>COUNTRY</th>
+            <th>ROLE</th>
+            <th>ACTION</th>
+
+
+
+        </tr>
+        </thead>
+        <tbody id="userList"></tbody>
+    </table>
+
+</section>
+
+<button id="addUser">Add User</button>
+
+
+<script src="admin.js"></script>
 
 </body>
-
 
 </html>

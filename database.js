@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 // var mysql = require('mysql');
 
 // var con = mysql.createConnection({
@@ -27,6 +28,21 @@ var con = mysql.createConnection({
 con.connect(function (err) {
     if (err) throw err;
     console.log("Connected to database!");
+/*
+    con.query("ALTER TABLE users ADD COLUMN role VARCHAR(255)", function (err, result, fields) {
+        if (err) throw err;
+        console.log(result);
+    });
+    const password = "admin";
+    const hashedPassword = hashPassword(password);
+    var sql2 = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
+    var values = ['admin@admin.com', hashedPassword, 'admin'];
+    con.query(sql2, values, function (err, result) {
+        if (err) throw err;
+        console.log("User inserted");
+    }); */
+
+
 /*
     const countries = ['European Union-27 countries (from 2020)', 'European Union-28 countries (2013-2020)', 'European Union-27 countries (2007-2013)', 'Euro area- 19 countries(2015-2022)', 'Euro area- 18 countries(2014)', 'Belgium', 'Bulgaria', 'Czechia', 'Denmark', 'Germany (until 1990 former teritory of the FRG)', 'Estonia', 'Ireland', 'Greece', 'Spain', 'France', 'Croatia', 'Italy', 'Cyprus', 'Latvia', 'Lithuania', 'Luxembourg', 'Hungary', 'Malta', 'Netherlands', 'Austria', 'Poland', 'Portugal', 'Romania', 'Slovenia', 'Slovakia', 'Finland', 'Sweden', 'Iceland', 'Norway', 'Switzerland', 'United Kingdom', 'North Macedonia', 'Serbia', 'Turkiye'];
     const years = [2008, 2014, 2017, 2019];
@@ -110,6 +126,22 @@ con.query("SELECT * FROM users", function (err, result, fields) {
     if (err) throw err;
     console.log(result);
 });
+
+function hashPassword(password) {
+    const hash = crypto.createHash('sha256');
+    hash.update(password);
+    return hash.digest('hex');
+}
+
+
+
+
+/*
+var sql1 = "CREATE TABLE admin (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255), password VARCHAR(255))";
+con.query(sql1, function (err, result) {
+    if (err) throw err;
+    console.log("Table admin created");
+}); */
 
 //pentru sters useri
 /*

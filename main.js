@@ -161,9 +161,20 @@ const server = http.createServer(async (req, res) => {
                         res.writeHead(401, {'Content-Type': 'text/plain'});
                         res.end('Invalid email or password.');
                     } else {
-                        const token = generateToken(email);
-                        res.writeHead(200, {'Content-Type': 'application/json'});
-                        res.end(JSON.stringify({token: token}));
+                        const user = results[0];
+                        if (user.role === "admin") {
+                            const token = generateToken(email);
+                            const dateAdmin = {
+                                "token": token,
+                                "role": "admin"
+                            }
+                            res.writeHead(200, {'Content-Type': 'application/json'});
+                            res.end(JSON.stringify(dateAdmin));
+                        } else {
+                            const token = generateToken(email);
+                            res.writeHead(200, {'Content-Type': 'application/json'});
+                            res.end(JSON.stringify({token: token}));
+                        }
                     }
                 });
 
@@ -281,7 +292,7 @@ const server = http.createServer(async (req, res) => {
         });
 
     }// ------------------------------------------ Informations ------------------------------------------------------------
-    if (reqUrl.pathname.startsWith('/api/data') && req.method === 'POST') {
+     if (reqUrl.pathname.startsWith('/api/data') && req.method === 'POST') {
         let url = new URLSearchParams(reqUrl.query);
         let y = reqUrl.query.year;
         let c = reqUrl.query.country;
@@ -395,6 +406,8 @@ const server = http.createServer(async (req, res) => {
             })
         }
     }
+
+
 // ------------------------------------------ Countries ------------------------------------------------------------
     if (reqUrl.pathname === ('/api/countries') && req.method === 'POST') {
         let body = '';
@@ -458,36 +471,6 @@ const server = http.createServer(async (req, res) => {
             }
         });
     }
-    if (reqUrl.pathname.startsWith( '/api/admin/getUser/' ) && req.method === 'POST') {
-        let body = '';
-        let id = reqUrl.pathname.split("/")[4];
-        req.on('data', (chunk) => {
-            body += chunk;
-        });
-        req.on('end', async () => {
-            const email = body;
-            try {
-                connection.query('SELECT * FROM users WHERE id = ?', [id], (error, results, fields) => {
-                    if (error) {
-                        res.writeHead(500, {'Content-Type': 'text/plain'});
-                        res.end('Internal server error');
-                    }
-                    console.log(results.length);
-                    if (results.length === 0) {
-                        res.writeHead(401, {'Content-Type': 'text/plain'});
-                        res.end('Invalid email or password.');
-                    } else {
-                        res.writeHead(200, {'Content-Type': 'application/json'});
-                        res.end(JSON.stringify(results));
-                    }
-                });
-
-            } catch (error) {
-                res.writeHead(500, {'Content-Type': 'text/plain'});
-                res.end('Internal server error');
-            }
-        });
-    }
 
     if (reqUrl.pathname === '/api/admin/deleteUser/' && req.method === 'DELETE') {
         let body = '';
@@ -514,6 +497,8 @@ const server = http.createServer(async (req, res) => {
             }
         })
     }
+
+
     if (reqUrl.pathname === '/api/admin/editUser/' && req.method === 'PUT') {
         let body = '';
         req.on('data', (chunk) => {
