@@ -59,39 +59,39 @@
             <label class="labels>">Select Country:</label>
         </div>
         <section id="country">
-            <select id="country-select" onclick="getCountry();getStats()">
-                <option>Albania</option>
-                <option value="Austria">Andora</option>
-                <option value="Albania">Belarus</option>
-                <option value="Austria">Belgium</option>
-                <option value="Albania">Croatia</option>
-                <option value="Austria">Cyprus</option>
-                <option value="Albania">Denmark</option>
-                <option value="Austria">Estonia</option>
-                <option value="Albania">Finland</option>
-                <option value="Austria">Georgia</option>
-                <option value="Albania">Hungary</option>
-                <option value="Austria">Iceland</option>
-                <option value="Albania">Kosovo</option>
-                <option value="Austria">Lithuania</option>
-                <option value="Albania">Moldova</option>
-                <option value="Austria">Netherlands</option>
-                <option value="Albania">Poland</option>
-                <option value="Austria">Romania</option>
-                <option value="Albania">Serbia</option>
-                <option value="Austria">Spain</option>
-                <option value="Albania">Turkey</option>
-                <option value="Austria">Ukraine</option>
-                <option value="Albania">Vatican City</option>
+            <select id="country-select" onchange="getCountry()">
+                <option value="Albania">Albania</option>
+                <option value="Andora">Andora</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Cyprus">Cyprus</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Finland">Finland</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="Kosovo">Kosovo</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Moldova">Moldova</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Poland">Poland</option>
+                <option value="Romania">Romania</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Spain">Spain</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="Vatican">Vatican City</option>
             </select>
-            <div id="chart"></div>
+
         </section>
 
         <div class="select-year">
             <label class="labels>">Select Year:</label>
         </div>
         <section id="year">
-            <select id="year-select" onclick="getYear();getStats();">
+            <select id="year-select" onchange="getYear();">
                 <option value="All years available">All years available</option>
                 <option value="2019">2019</option>
                 <option value="2018">2018</option>
@@ -120,7 +120,7 @@
             <div class="content">
 
                 <div class="generate">
-                    <a onclick=getStats("table");>
+                    <a onclick="getStats('table')">
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <label> Generate Table</label>
@@ -137,7 +137,7 @@
         <div class="select-menu">
             <div class="content">
                 <div class="generate">
-                    <a onclick=getStats("line");>
+                    <a onclick="getStats('line')">
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <label> Generate Line</label>
@@ -156,7 +156,7 @@
         <div class="select-menu">
             <div class="content">
                 <div class="generate">
-                    <a onclick=getStats("bar");>
+                    <a onclick="getStats('bar')">
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <label> Generate Bar</label>
@@ -170,7 +170,7 @@
         <div class="select-menu">
             <div class="content">
                 <div class="generate">
-                    <a href="statistics-generate-map.html">
+                    <a onclick="getStats('map')">
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <label> Generate Map</label>
@@ -186,6 +186,7 @@
     </div>
 
 </div>
+
 <script src="../js/stats.js" ></script>
 <script src="../homepage_login_register/logout.js" ></script>
 
