@@ -117,14 +117,7 @@ const server = http.createServer(async (req, res) => {
             });
         }
 
-    // else if(pg==="statsPage"||pg==="statsBarChart"||pg==="statsLineChart"||pg==="statsLineChart"){//req.url.substring(req.url.length-3,req.url.length)==="html"){
-    //      let page=req.url.substring(req.url.toString().lastIndexOf("/"));
-    //      fs.readFile("./statistics/pages/" + page, function (error, htmlContent) {
-    //          res.writeHead(200, {'Content-Type': 'text/html'})
-    //          res.write(htmlContent);
-    //          res.end();
-    //      });
-    //  }
+
 //-------------------------------------Statistics-----------------------------------------
 //     else if(req.url.substring(0, 11) === '/statistics') {
 //         let body = '';
@@ -152,6 +145,7 @@ const server = http.createServer(async (req, res) => {
 
     //-------------------------------------Comparison-----------------------------------------
     else if (req.url.substring(0, 11) === '/comparison') {
+
         let body = '';
         req.on('data', (chunk) => {
             body += chunk;
@@ -180,8 +174,6 @@ const server = http.createServer(async (req, res) => {
                 });
         });
     }
-
-
 
 
 
@@ -444,7 +436,187 @@ const server = http.createServer(async (req, res) => {
             })
         }
     }
+// ------------------------------------------ Countries ------------------------------------------------------------
+    if (reqUrl.pathname === ('/api/countries') && req.method === 'POST') {
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', async () => {
+            try {
+                let query = "SELECT c.country FROM countries c";
+                let formatedQuery = mysql.format(query, []);
+                console.log(formatedQuery);
+                connection.query(formatedQuery, async (error, results, fields) => {
 
+                    if (error) {
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal server error');
+                    }
+                    if (results.length === 0) {
+                        res.writeHead(400, {'Content-Type': 'text/plain'});
+                        res.end('Information not found');
+                    } else {
+                        res.writeHead(200, {'Content-Type': 'application/json'});
+                        res.end(JSON.stringify({results}));
+                    }
+                });
+            } catch (error) {
+                res.writeHead(500, {'Content-Type': 'text/plain'});
+                res.end('Internal server error');
+            }
+        })
+
+    }
+
+    //---------------------------------------- Admin -------------------------------------------------------------------
+    if (reqUrl.pathname === '/api/admin/getUsers' && req.method === 'POST') {
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', async () => {
+            const email = body;
+            try {
+                connection.query('SELECT * FROM users ', [], (error, results, fields) => {
+                    if (error) {
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal server error');
+                    }
+                    console.log(results.length);
+                    if (results.length === 0) {
+                        res.writeHead(401, {'Content-Type': 'text/plain'});
+                        res.end('Invalid email or password.');
+                    } else {
+                        res.writeHead(200, {'Content-Type': 'application/json'});
+                        res.end(JSON.stringify(results));
+                    }
+                });
+
+            } catch (error) {
+                res.writeHead(500, {'Content-Type': 'text/plain'});
+                res.end('Internal server error');
+            }
+        });
+    }
+    if (reqUrl.pathname.startsWith( '/api/admin/getUser/' ) && req.method === 'POST') {
+        let body = '';
+        let id = reqUrl.pathname.split("/")[4];
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', async () => {
+            const email = body;
+            try {
+                connection.query('SELECT * FROM users WHERE id = ?', [id], (error, results, fields) => {
+                    if (error) {
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal server error');
+                    }
+                    console.log(results.length);
+                    if (results.length === 0) {
+                        res.writeHead(401, {'Content-Type': 'text/plain'});
+                        res.end('Invalid email or password.');
+                    } else {
+                        res.writeHead(200, {'Content-Type': 'application/json'});
+                        res.end(JSON.stringify(results));
+                    }
+                });
+
+            } catch (error) {
+                res.writeHead(500, {'Content-Type': 'text/plain'});
+                res.end('Internal server error');
+            }
+        });
+    }
+
+    if (reqUrl.pathname === '/api/admin/deleteUser/' && req.method === 'DELETE') {
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', async () => {
+            const requestData = JSON.parse(body);
+            const id = requestData.id;
+            console.log(id);
+            try {
+                connection.query('DELETE FROM users WHERE id = ?', [id], async (error, results, fields) => {
+                    if (error) {
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal server error');
+                    } else {
+                        res.writeHead(200, {'Content-Type': 'application/json'});
+                        res.end("Successfully deleted the user");
+                    }
+                });
+            } catch (error) {
+                res.writeHead(500, {'Content-Type': 'text/plain'});
+                res.end('Internal server error');
+            }
+        })
+    }
+    if (reqUrl.pathname === '/api/admin/editUser/' && req.method === 'PUT') {
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', async () => {
+            const requestData = JSON.parse(body);
+            const id = requestData.id;
+            const firstname = requestData.firstname;
+            const lastname = requestData.lastname;
+            const username = requestData.username;
+            const email = requestData.email;
+            const password = requestData.password;
+            const country = requestData.country;
+            console.log(requestData);
+            try {
+                connection.query('UPDATE users SET firstname = ?, lastname = ?, username = ?, email = ?, password = ?, country = ? WHERE id = ?', [firstname, lastname, username, email, password, country, id], async (error, results, fields) => {
+                    if (error) {
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal server error');
+                    } else {
+                        res.writeHead(200, {'Content-Type': 'application/json'});
+                        res.end("Successfully updated the user");
+                    }
+                });
+            } catch (error) {
+                res.writeHead(500, {'Content-Type': 'text/plain'});
+                res.end('Internal server error');
+            }
+        })
+    }
+    if (reqUrl.pathname === '/api/admin/addUser/' && req.method === 'POST') {
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', async () => {
+            try {
+                const requestData = JSON.parse(body);
+                const firstname = requestData.firstname;
+                const lastname = requestData.lastname;
+                const username = requestData.username;
+                const email = requestData.email;
+                const password = requestData.password;
+                const country = requestData.country;
+                console.log(requestData);
+                connection.query('INSERT INTO users (firstname, lastname, email, username, password, country) VALUES (?, ?, ?, ?, ?, ?)', [firstname, lastname, email, username, password, country], async (error, results, fields) => {
+                    if (error) {
+                        res.writeHead(500, {'Content-Type': 'text/plain'});
+                        res.end('Internal server error');
+                    } else {
+                        res.writeHead(200, {'Content-Type': 'application/json'});
+                        res.end("Successfully added the user");
+                        console.log("ok");
+                    }
+                });
+            } catch (error) {
+                res.writeHead(500, {'Content-Type': 'text/plain'});
+                res.end('Internal server error');
+            }
+        })
+    }
 })
 
 
