@@ -146,7 +146,7 @@ function populateUserTable(data) {
 
             firstNameCell.contentEditable = true;
             lastNameCell.contentEditable = true;
-            emailCell.contentEditable = true;
+            emailCell.contentEditable = false;
             usernameCell.contentEditable = true;
             passwordCell.contentEditable = true;
             countryCell.contentEditable = true;
