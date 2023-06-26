@@ -630,19 +630,20 @@ const server = http.createServer(async (req, res) => {
             const id = requestData.id;
             const firstname = requestData.firstname;
             const lastname = requestData.lastname;
-            const username = requestData.username;
             const email = requestData.email;
+            const username = requestData.username;
             const password = requestData.password;
             const country = requestData.country;
             console.log(requestData);
             try {
-                connection.query('UPDATE users SET firstname = ?, lastname = ?, username = ?, email = ?, password = ?, country = ? WHERE id = ?', [firstname, lastname, username, email, password, country, id], async (error, results, fields) => {
+                connection.query('UPDATE users SET firstname = ?, lastname = ?, username = ?, password = ?, country = ? WHERE email = ?', [firstname, lastname, username, password, country, email], async (error, results, fields) => {
                     if (error) {
                         res.writeHead(500, {'Content-Type': 'text/plain'});
                         res.end('Internal server error');
                     } else {
+
                         res.writeHead(200, {'Content-Type': 'application/json'});
-                        res.end("Successfully updated the user");
+                        res.end(JSON.stringify(requestData));
                     }
                 });
             } catch (error) {
