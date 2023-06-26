@@ -10,7 +10,6 @@ async function defaultHandler(request, response) {
         JSON.stringify({
             message: `Not found.`,
         })
-
     );
     response.end();
 }
@@ -53,34 +52,33 @@ async function getOneCountryHandler(request, response, country, year) {
     }
 
 
-
-        // } else {   ///// if all years
-        //     try {
-        //         conn.query('SELECT * AS "index" FROM `mydb`.`countries` WHERE country="' + country + '" ', function (err, result, fields) {
-        //             JSON.parse(JSON.stringify(result), (key, value) => {
-        //                 if (key === "index") {
-        //                     number = value; /** */
-        //                 }
-        //             });
-        //             response.write(
-        //                 JSON.stringify({
-        //                     data: number,
-        //                 })
-        //             );
-        //             response.end();
-        //         });
-        //     } catch (err) {
-        //         response.write(
-        //             JSON.stringify({
-        //                 err: "Database",
-        //             })
-        //         );
-        //         response.end();
-        //
-        //
-        //     }
-        // }
+    // } else {   ///// if all years
+    //     try {
+    //         conn.query('SELECT * AS "index" FROM `mydb`.`countries` WHERE country="' + country + '" ', function (err, result, fields) {
+    //             JSON.parse(JSON.stringify(result), (key, value) => {
+    //                 if (key === "index") {
+    //                     number = value; /** */
+    //                 }
+    //             });
+    //             response.write(
+    //                 JSON.stringify({
+    //                     data: number,
+    //                 })
+    //             );
+    //             response.end();
+    //         });
+    //     } catch (err) {
+    //         response.write(
+    //             JSON.stringify({
+    //                 err: "Database",
+    //             })
+    //         );
+    //         response.end();
+    //
+    //
+    //     }
+    // }
 
 }
 
-        module.exports = {getOneCountryHandler, defaultHandler}
+module.exports = {getOneCountryHandler, defaultHandler}

@@ -1,4 +1,4 @@
-const mysql =require("mysql");
+const mysql = require("mysql");
 
 const con = mysql.createConnection({
     host: "localhost",
@@ -15,11 +15,12 @@ con.connect(function (err) {
 
 });
 
- function getDb () {
+function getDb() {
     if (con) {
         return con;
     } else {
         throw 'No database found!'
     }
 }
-module.exports={getDb}
+
+module.exports = {getDb}

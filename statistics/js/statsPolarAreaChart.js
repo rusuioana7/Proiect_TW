@@ -25,10 +25,10 @@ async function getChartPolar() {
             })
             .then((data) => {
                 obIndex = data.data;
-                let rest = 100-obIndex;
+                let rest = 100 - obIndex;
                 const statistics = {
                     'Obesity percentage': data.data,
-                    '': rest
+                    'Rest of population': rest
                 };
 
                 const chartData = {
@@ -37,12 +37,12 @@ async function getChartPolar() {
                         {
                             label: 'Statistic',
                             backgroundColor: [
-                                'rgba(255, 26, 104, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                                'rgba(255, 26, 104, 0.5)',
+                                'rgba(54, 162, 235, 0.5)',
+                                'rgba(255, 206, 86, 0.5)',
+                                'rgba(75, 192, 192, 0.5)',
+                                'rgba(153, 102, 255, 0.5)',
+                                'rgba(255, 159, 64, 0.5)'
                             ],
                             borderColor: [
                                 'rgba(255, 26, 104, 1)',

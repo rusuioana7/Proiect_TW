@@ -1,17 +1,19 @@
 let country;
 let obIndex;
-function getInfoBar(){
-    document.getElementById("info").innerHTML+=' <center><h2 className="title" style="color:white">Details</h2> ' +
+
+function getInfoBar() {
+    document.getElementById("info").innerHTML += ' <center><h2 className="title" style="color:white">Details</h2> ' +
         '<p className="text" style="color:white"> Format: Bar</p>' +
-        ' <p className="text" style="color:white">Region: '+country+'</p> ' +
-        '<p className="text" style="color:white">Year: '+year+'</p></center>';
+        ' <p className="text" style="color:white">Region: ' + country + '</p> ' +
+        '<p className="text" style="color:white">Year: ' + year + '</p></center>';
 }
+
 async function getChartBar() {
 
     try {
         let array = location.href.split("/");
-         country = array[3];
-         year = array[4];
+        country = array[3];
+        year = array[4];
         await fetch('http://localhost:8082/api/v1/' + country + '/' + year, {
             method: 'GET'
         })
@@ -25,7 +27,7 @@ async function getChartBar() {
 
                 const statistics = {
                     'Obesity index': data.data,
-                    '':rest
+                    'Rest of population': rest
                 };
 
                 const chartData = {

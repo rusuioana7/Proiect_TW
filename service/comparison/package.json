@@ -6,6 +6,6 @@
   },
 
   "scripts": {
-    "stats": "nodemon comparison.js"
+    "comparison": "nodemon comparison.js"
   }
 }

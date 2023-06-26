@@ -37,7 +37,7 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
-    //------------render html, css, js---------
+    //------------render html, css, js Statistics---------
     const reqRL = url.parse(req.url, true);
     let pg = req.url.substring(req.url.lastIndexOf("/") + 1);
     if (pg === "statisticsHomepage") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
@@ -53,15 +53,8 @@ const server = http.createServer(async (req, res) => {
             res.end();
 
 
-
-
-
-
-
-
-
-
         });
+
     } else if (pg === "statisticsLine") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
         fs.readFile("./statistics/pages/statistics-generate-line.html", function (error, htmlContent) {
             res.writeHead(200, {'Content-Type': 'text/html'})
@@ -76,18 +69,12 @@ const server = http.createServer(async (req, res) => {
         });
 
 
-
     } else if (pg === "statisticsPolarArea") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
         fs.readFile("./statistics/pages/statistics-generate-map.html", function (error, htmlContent) {
             res.writeHead(200, {'Content-Type': 'text/html'})
             res.write(htmlContent);
             res.end();
         });
-
-
-
-
-
 
 
     } else if (req.url === "/styling/statistics-main.css" || req.url === "/styling/statistics-generate-bar.css" || req.url === "/styling/statistics-generate-line.css" || req.url === "/styling/statistics-generate-piechart.css" || req.url === "/styling/statistics-generate-polar.css") {
@@ -105,14 +92,6 @@ const server = http.createServer(async (req, res) => {
         });
 
 
-
-
-
-
-
-
-
-
     } else if (req.url === "/homepage_login_register/background0.png") {
         fs.readFile("." + req.url, function (error, htmlContent) {
             res.writeHead(200, {'Content-Type': 'image/png'})
@@ -120,12 +99,15 @@ const server = http.createServer(async (req, res) => {
             res.end();
         });
 
+        //------------render html, css, js Comparison---------
     } else if (pg === "comparisonHomepage") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
         fs.readFile("./comparison/pages/comparison-main.html", function (error, htmlContent) {
             res.writeHead(200, {'Content-Type': 'text/html'})
             res.write(htmlContent);
             res.end();
         });
+
+
     } else if (pg === "comparisonBar") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
         fs.readFile("./comparison/pages/comparison-generate-bar.html", function (error, htmlContent) {
             res.writeHead(200, {'Content-Type': 'text/html'})
@@ -163,11 +145,15 @@ const server = http.createServer(async (req, res) => {
             res.end();
 
         });
-    } else if (req.url === "/comparison-main-filter.js" || req.url === "/comparison-year-filter.js") {
+
+
+    } else if (req.url === "/comparison-main-filter.js" || req.url === "/comparison-year-filter.js" || req.url === "/comparisonBar.js") {
         fs.readFile("./comparison/pages" + req.url, function (error, htmlContent) {
             res.writeHead(200, {'Content-Type': 'text/javascript'})
             res.write(htmlContent);
             res.end();
+
+
         });
     } else if (req.url === "/comparison/images/close.png") {
         fs.readFile("." + req.url, function (error, htmlContent) {
@@ -176,12 +162,42 @@ const server = http.createServer(async (req, res) => {
             res.end();
         });
 
+
     }
-
-
-
-
-
+        //------------render html, css, js MyProfile---------
+        // else if (pg === "myProfile") {//req.url.substring(req.url.length-3,req.url.length)==="html"){
+        //     fs.readFile("./logo_myProfile_about/myProfile.html", function (error, htmlContent) {
+        //         res.writeHead(200, {'Content-Type': 'text/html'})
+        //         res.write(htmlContent);
+        //         res.end();
+        //     });
+        // } else if (req.url === "/myProfile.css") {
+        //     fs.readFile("./logo_myProfile_about" + req.url, function (error, htmlContent) {
+        //         res.writeHead(200, {'Content-Type': 'text/css'})
+        //         res.write(htmlContent);
+        //         res.end();
+        //
+        //
+        //     });
+        // } else if (req.url === "/myProfile.js") {
+        //     fs.readFile("./logo_myProfile_about" + req.url, function (error, htmlContent) {
+        //         res.writeHead(200, {'Content-Type': 'text/javascript'})
+        //         res.write(htmlContent);
+        //         res.end();
+        //     });
+        // } else if (req.url === "/logo_myProfile_about/images/bck2.jpg") {
+        //     fs.readFile("." + req.url, function (error, htmlContent) {
+        //         res.writeHead(200, {'Content-Type': 'image/jpg'})
+        //         res.write(htmlContent);
+        //         res.end();
+        //     });
+        // }else if (req.url === "/logo_myProfile_about/images/profilepic.jpg") {
+        //     fs.readFile("." + req.url, function (error, htmlContent) {
+        //         res.writeHead(200, {'Content-Type': 'image/jpg'})
+        //         res.write(htmlContent);
+        //         res.end();
+        //     });
+        // }
 
 
 //-------------------------------------Statistics-----------------------------------------

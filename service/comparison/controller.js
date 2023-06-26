@@ -29,6 +29,7 @@ async function defaultHandler(request, response) {
                         } else {
                             const number = JSON.parse(JSON.stringify(result))[0].year;
                             responseBody.push(number);
+                            console.log(number);
                             resolve();
                         }
                     });
