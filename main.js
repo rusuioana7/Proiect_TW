@@ -600,10 +600,10 @@ const server = http.createServer(async (req, res) => {
         });
         req.on('end', async () => {
             const requestData = JSON.parse(body);
-            const id = requestData.id;
-            console.log(id);
+            const email = requestData.email;
+            console.log(email);
             try {
-                connection.query('DELETE FROM users WHERE id = ?', [id], async (error, results, fields) => {
+                connection.query('DELETE FROM users WHERE email = ?', [email], async (error, results, fields) => {
                     if (error) {
                         res.writeHead(500, {'Content-Type': 'text/plain'});
                         res.end('Internal server error');
