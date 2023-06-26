@@ -40,7 +40,7 @@ con.connect(function (err) {
     con.query(sql2, values, function (err, result) {
         if (err) throw err;
         console.log("User inserted");
-    }); */
+    });
 
 
 /*

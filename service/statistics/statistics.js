@@ -11,6 +11,10 @@ const server = http.createServer(async (request, response) => {
     let country=array[3];
     let year=array[4];
     try {
+
+
+
+
         switch (reqMethod) {
             case "GET": {
                 if (array[2] === "v1") {
@@ -22,9 +26,12 @@ const server = http.createServer(async (request, response) => {
             //     await controller.defaultHandler(request, response);
             // }
 
+
         }
     }catch (e){console.log(e);}
 });
+
+
 
 server.listen(8082, () => {
     console.log('Statistics api running at http://localhost:8082/');
