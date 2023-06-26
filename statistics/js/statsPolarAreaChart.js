@@ -3,14 +3,14 @@ let obIndex;
 let year;
 
 
-function getInfoTable() {
+function getInfoPolar() {
     document.getElementById("info").innerHTML += ' <center><h2 className="title" style="color:white">Details</h2> ' +
-        '<p className="text" style="color:white"> Format: Table</p>' +
+        '<p className="text" style="color:white"> Format: Polar Area</p>' +
         ' <p className="text" style="color:white">Region: ' + country + '</p> ' +
         '<p className="text" style="color:white">Year: ' + year + '</p></center>';
 }
 
-async function getPieChart() {
+async function getChartPolar() {
 
     try {
         let array = location.href.split("/");
@@ -27,7 +27,6 @@ async function getPieChart() {
                 obIndex = data.data;
                 let rest = 100-obIndex;
                 const statistics = {
-                    'Country': country,
                     'Obesity percentage': data.data,
                     '': rest
                 };
@@ -71,7 +70,7 @@ async function getPieChart() {
                 };
 
                 const canvas = new Chart(document.getElementById('chartCanvas'), {
-                    type: 'pie',
+                    type: 'polarArea',
                     data: chartData,
                     options: chartOptions
                 });
@@ -85,7 +84,7 @@ async function getPieChart() {
 
 }
 
-function download() {
+function downloadPolar() {
 
     let type = document.getElementById("format-select").value.toString();
 

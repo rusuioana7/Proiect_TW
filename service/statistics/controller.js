@@ -10,18 +10,19 @@ async function defaultHandler(request, response) {
         JSON.stringify({
             message: `Not found.`,
         })
+
     );
     response.end();
 }
 
-async  function getOneCountryHandler(request, response, country, year) {
+async function getOneCountryHandler(request, response, country, year) {
     let responseBody = null;
     let chunks = [];
     var conn = db.getDb();
     let number;
     console.log(country);
     console.log(year);
-
+    if (year !== "all") {
 
         try {
             conn.query('SELECT  `' + year + '` AS "index" FROM `mydb`.`countries` WHERE country="' + country + '" ', function (err, result, fields) {
@@ -49,10 +50,36 @@ async  function getOneCountryHandler(request, response, country, year) {
             );
             response.end();
         }
+    }
 
 
 
-
+        // } else {   ///// if all years
+        //     try {
+        //         conn.query('SELECT * AS "index" FROM `mydb`.`countries` WHERE country="' + country + '" ', function (err, result, fields) {
+        //             JSON.parse(JSON.stringify(result), (key, value) => {
+        //                 if (key === "index") {
+        //                     number = value; /** */
+        //                 }
+        //             });
+        //             response.write(
+        //                 JSON.stringify({
+        //                     data: number,
+        //                 })
+        //             );
+        //             response.end();
+        //         });
+        //     } catch (err) {
+        //         response.write(
+        //             JSON.stringify({
+        //                 err: "Database",
+        //             })
+        //         );
+        //         response.end();
+        //
+        //
+        //     }
+        // }
 
 }
 

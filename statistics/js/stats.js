@@ -28,19 +28,19 @@ function getStats(type) {
     //             res.end(JSON.stringify(dataa));
     //         })
     // }
-    // if(document.location==="statistics-generated-table.html"){
+    // if(document.location==="statistics-generated-piechart.html"){
     //     document.getElementById("table").innerHTML+='';
     // }
     if (year !== "" && country !== "") {
-        if (type === "table") {
-            window.location = country + "/" + year + "/" + "statisticsTable";
+        if (type === "pie") {
+            window.location = country + "/" + year + "/" + "statisticsPieChart";
         } else if (type === "line") {
             window.location = country + "/" + year + "/" + "statisticsLine";
         } else if (type === "bar") {
             window.location = country + "/" + year + "/" + "statisticsBar";
         }
-        else if (type === "map") {
-            window.location = country + "/" + year + "/" + "statisticsMap";
+        else if (type === "polar") {
+            window.location = country + "/" + year + "/" + "statisticsPolarArea";
         }
     } else {
         window.alert("Please choose a country and a year first.");

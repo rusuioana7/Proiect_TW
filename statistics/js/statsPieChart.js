@@ -1,17 +1,22 @@
 let country;
 let obIndex;
-function getInfoBar(){
-    document.getElementById("info").innerHTML+=' <center><h2 className="title" style="color:white">Details</h2> ' +
-        '<p className="text" style="color:white"> Format: Bar</p>' +
-        ' <p className="text" style="color:white">Region: '+country+'</p> ' +
-        '<p className="text" style="color:white">Year: '+year+'</p></center>';
+let year;
+
+
+function getInfoPie() {
+    document.getElementById("info").innerHTML += ' <center><h2 className="title" style="color:white">Details</h2> ' +
+        '<p className="text" style="color:white"> Format: Pie Chart</p>' +
+        ' <p className="text" style="color:white">Region: ' + country + '</p> ' +
+        '<p className="text" style="color:white">Year: ' + year + '</p></center>';
 }
-async function getChartBar() {
+
+async function getChartPie() {
 
     try {
         let array = location.href.split("/");
-         country = array[3];
-         year = array[4];
+        country = array[3];
+        year = array[4];
+
         await fetch('http://localhost:8082/api/v1/' + country + '/' + year, {
             method: 'GET'
         })
@@ -20,12 +25,10 @@ async function getChartBar() {
             })
             .then((data) => {
                 obIndex = data.data;
-                let rest = 100 - obIndex
-
-
+                let rest = 100-obIndex;
                 const statistics = {
-                    'Obesity index': data.data,
-                    '':rest
+                    'Obesity percentage': data.data,
+                    '': rest
                 };
 
                 const chartData = {
@@ -33,9 +36,25 @@ async function getChartBar() {
                     datasets: [
                         {
                             label: 'Statistic',
-                            backgroundColor: 'rgba(0, 123, 255, 0.5)',
-                            borderColor: 'rgba(0, 123, 255, 1)',
+                            backgroundColor: [
+                                'rgba(255, 26, 104, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 26, 104, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(0, 0, 0, 1)'
+                            ],
                             borderWidth: 1,
+
                             data: Object.values(statistics).map((value) => value)
                         }
                     ]
@@ -50,20 +69,22 @@ async function getChartBar() {
                     }
                 };
 
-                const canvas = document.getElementById('chartCanvas');
-                new Chart(canvas, {
-                    type: 'bar',
+                const canvas = new Chart(document.getElementById('chartCanvas'), {
+                    type: 'pie',
                     data: chartData,
                     options: chartOptions
                 });
+                const chartVersion = document.getElementById('chartCanvas');
+                chartVersion.innerText = Chart.version;
             });
     } catch (e) {
         console.log(e);
     }
+
+
 }
 
-
-function downloadBar() {
+function downloadPie() {
 
     let type = document.getElementById("format-select").value.toString();
 
@@ -121,4 +142,6 @@ function downloadBar() {
         downloadLink.download = "chart.svg";
         downloadLink.click();
     }
+
+
 }

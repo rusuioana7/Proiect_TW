@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost:8081/../styling/statistics-generate-table.css">
+    <link rel="stylesheet" href="http://localhost:8081/../styling/statistics-generate-piechart.css">
     <script src="https://kit.fontawesome.com/035860ecaf.js"></script>
     <title>StatisticsPage</title>
 </head>
 
-<body onload="getPieChart();getInfoTable()">
+<body onload="getChartPie();getInfoPie()">
 
 <header>
     <div class="navbar">
@@ -53,18 +53,18 @@
     </section>
 
     <div class="select-menu">
-        <div class="select-button" onclick="download()">
+        <div class="select-button" onclick="downloadPie()">
 
             <i class="fa-solid fa-download"></i>
 
-            <label> Export Table</label>
+            <label> Export </label>
 
         </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="http://localhost:8081/../js/statsTableChart.js"></script>
+<script src="http://localhost:8081/../js/statsPieChart.js"></script>
 <script src="http://localhost:8081/../../homepage_login_register/logout.js"></script>
 
 

@@ -2,17 +2,18 @@ let country;
 let obIndex;
 let year;
 
-function getInfo(){
-    document.getElementById("info").innerHTML+=' <center><h2 className="title" style="color:white">Details</h2> ' +
+function getInfoLine() {
+    document.getElementById("info").innerHTML += ' <center><h2 className="title" style="color:white">Details</h2> ' +
         '<p className="text" style="color:white"> Format: Line</p>' +
-        ' <p className="text" style="color:white">Region: '+country+'</p> ' +
-        '<p className="text" style="color:white">Year: '+year+'</p></center>';
+        ' <p className="text" style="color:white">Region: ' + country + '</p> ' +
+        '<p className="text" style="color:white">Year: ' + year + '</p></center>';
 }
-async function getChart() {
+
+async function getChartLine() {
 
     try {
         let array = location.href.split("/");
-       country = array[3];
+        country = array[3];
         year = array[4];
         await fetch('http://localhost:8082/api/v1/' + country + '/' + year, {
             method: 'GET'
@@ -22,9 +23,10 @@ async function getChart() {
             })
             .then((data) => {
                 obIndex = data.data;
+                let rest = 100 - obIndex
                 const statistics = {
-                    'Country': country,
                     'Obesity index': data.data,
+
                 };
 
                 const chartData = {
@@ -63,7 +65,7 @@ async function getChart() {
 
 }
 
-function download() {
+function downloadLine() {
 
     let type = document.getElementById("format-select").value.toString();
 
