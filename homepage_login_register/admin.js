@@ -84,7 +84,7 @@ function populateUserTable(data) {
 
         userList.appendChild(row);
 
-     async function saveUser(user) {
+      async function saveUser(user) {
             saveButton.style.display = 'none';
             editButton.style.display = 'inline-block';
 
@@ -123,6 +123,7 @@ function populateUserTable(data) {
              if (response.ok) {
                  console.log('User updated successfully');
                  const updatedUserData = await response.json();
+                 console.log(updatedUserData);
                  firstNameCell.textContent = updatedUserData.firstname;
                  lastNameCell.textContent = updatedUserData.lastname;
                  emailCell.textContent = updatedUserData.email;
@@ -136,6 +137,7 @@ function populateUserTable(data) {
              console.error('Error updating user:', error);
          }
          }
+
 
 
         function  editUser(user){
