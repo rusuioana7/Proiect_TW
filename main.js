@@ -538,9 +538,9 @@ const server = http.createServer(async (req, res) => {
         req.on('end', async () => {
             try {
                 let query = "SELECT c.country FROM countries c";
-                let formatedQuery = mysql.format(query, []);
-                console.log(formatedQuery);
-                connection.query(formatedQuery, async (error, results, fields) => {
+               // let formatedQuery = mysql.format(query, []);
+                console.log(query);
+                connection.query(query, async (error, results, fields) => {
 
                     if (error) {
                         res.writeHead(500, {'Content-Type': 'text/plain'});
