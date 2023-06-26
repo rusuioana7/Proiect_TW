@@ -156,6 +156,29 @@ function populateUserTable(data) {
 
 }
 
+async function deleteUser(user){
+    try {
+        const response = await fetch(`http://localhost:8081/api/admin/deleteUser/`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email: user.email})
+        });
+        if (response.ok) {
+            console.log('User deleted successfully');
+            const userList = document.getElementById('userList');
+            const rowToDelete = document.getElementById('userRow-' + user.id);
+            userList.removeChild(rowToDelete);
+        } else {
+            console.error('Failed to delete user');
+        }
+    }catch (error){
+    console.error('Error deleting user:', error);
+    }
+}
+
+
 
 
 function createButton(text, color, onClick) {
