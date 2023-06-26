@@ -7,8 +7,8 @@ function getCountry() {
 
 function getYear() {
     year = document.getElementById('year-select').value;
-    if(year==="All years available"){
-        year="all";
+    if (year === "All years available") {
+        year = "all";
     }
     console.log(year);
 }
@@ -38,8 +38,7 @@ function getStats(type) {
             window.location = country + "/" + year + "/" + "statisticsLine";
         } else if (type === "bar") {
             window.location = country + "/" + year + "/" + "statisticsBar";
-        }
-        else if (type === "polar") {
+        } else if (type === "polar") {
             window.location = country + "/" + year + "/" + "statisticsPolarArea";
         }
     } else {

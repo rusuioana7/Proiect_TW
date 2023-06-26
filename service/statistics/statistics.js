@@ -1,5 +1,5 @@
-const http =require ("http");
-const controller= require("./controller.js");
+const http = require("http");
+const controller = require("./controller.js");
 
 const server = http.createServer(async (request, response) => {
     console.log(request.method);
@@ -7,18 +7,16 @@ const server = http.createServer(async (request, response) => {
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     const reqMethod = request.method;
-    let array= request.url.split("/"); // /api/v1/country/year
-    let country=array[3];
-    let year=array[4];
+    let array = request.url.split("/"); // /api/v1/country/year
+    let country = array[3];
+    let year = array[4];
     try {
-
-
 
 
         switch (reqMethod) {
             case "GET": {
                 if (array[2] === "v1") {
-                     await controller.getOneCountryHandler(request, response, country, year);
+                    await controller.getOneCountryHandler(request, response, country, year);
                 }
                 break;
             }
@@ -28,9 +26,10 @@ const server = http.createServer(async (request, response) => {
 
 
         }
-    }catch (e){console.log(e);}
+    } catch (e) {
+        console.log(e);
+    }
 });
-
 
 
 server.listen(8082, () => {
