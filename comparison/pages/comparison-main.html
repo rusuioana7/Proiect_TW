@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styling/comparison-main.css">
     <script src="https://kit.fontawesome.com/035860ecaf.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>ComparisonPage</title>
 </head>
 
@@ -166,7 +168,7 @@
     <div id="selected-countries"></div>
 
     <script src="comparison-main-filter.js"></script>
-</button>
+    </button>
 
 </div>
 </div>
@@ -175,10 +177,37 @@
 
 <div class="chooseformat">
 
-    <h3 class="format">Choose format:</h3>
+    <h3 class="format">PieChart</h3>
 
+    <canvas id="pieChart"></canvas>
 
-    <div class="select-menu-container">
+</div>
+
+<div class="chooseformat">
+
+    <h3 class="format">LineChart</h3>
+
+    <canvas id="lineChart"></canvas>
+
+</div>
+
+<div class="chooseformat">
+
+    <h3 class="format">BarChart</h3>
+
+    <canvas id="barChart"></canvas>
+
+</div>
+
+<div class="chooseformat">
+
+    <h3 class="format">DoughnutChart</h3>
+
+    <canvas id="doughnutChart"></canvas>
+
+</div>
+
+<!--    <div class="select-menu-container">
 
 
         <div class="select-menu">
@@ -188,9 +217,11 @@
 
                 <div class="generate">
                     <a href="comparison-generate-table.html">
+
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <label > Generate Table</label>
+
 
 
                 </div>
@@ -247,9 +278,10 @@
         </div>
         </a>
 
-    </div>
-</div>
+    </div>-->
+<!--</div>-->
 <script src="../homepage_login_register/logout.js"  ></script>
+<script src="../comparison/pages/comparison-main-filter.js"></script>
 </body>
 
 </html>
