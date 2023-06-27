@@ -235,6 +235,12 @@
     <p> Butoanele de tip "Generate" redirectioneaza catre pagini ce permit o vizualizare clara a datelor (in forma aleasa
         "Generate line"/  "Generate bar"/ "Generate table"/ "Generate map") si permite, de asemenea, exportul generarii printr-un buton
         "Export" in unul din formatele alese de catre utilizator: CSV, WebP, SVG.
+
+    <ul> <u> Tehnologii folosite: </u></ul>
+    <li>Biblioteca open-source "Chart.js" pentru generarea chart-urilor.</li>
+    <li> Randarea paginilor html, css si js. Pagina statistics ruleaza la portul 8082.</li>
+
+
     </p>
     <h3>8. Butonul Comparison</h3>
     <p> Redirectioneaza catre o pagina interactiva unde utilizatorul are posibilitatea de a compara datele despre obezitate
@@ -242,9 +248,50 @@
         De asemenea, butoanele "Generate line"/  "Generate bar"/ "Generate table"/ "Generate map" redirectioneaza catre pagini cu
         vizualizari ale datelor selectate, permitand si de aceasta data exportul rezultatelor in formate alese de utilizator: CSV, SVG, WebP. </p>
 
+    <ul><u>Tehnologii folosite: </u>
+        <li>Biblioteca open-source "Chart.js" pentru generarea chart-urilor.</li>
+        <li> Randarea paginilor html, css si js. Pagina statistics ruleaza la portul 8082.</li>
+        <li>Endpoint: "/api/countries"  </li>
+        <li>Metoda: POST
+        </li>
+        <li> Justificare: pentru a incarca din baza de date in front-end tarile. S-ar fi putut folosi metoda GET pentru a vedea in URL datele, intrucat in body nu avem nimic.
+        </li>
+        <li>Endpoint: "/api/data" </li>
+        <li>Metoda: POST</li>
+        <li>Justificare: pentru a vedea datele selectate de user in frontend, ulterior fiind folosit pentru generarea chart-urilor.
+        </li>
+    </ul>
+
+
+
+
+
     <h3>11. Butonul LogOut</h3>
     <p>Redirectioneaza catre pagina cu formularul de login/register, oferind ocazia utilizatorilor de a-si schimba statutul intre autentificat/neautentificat.
         De asemenea, ajuta serverul pentru a sti ce date se modifica in baza de date.</p>
+
+    <h3>12. Pagina de admin</h3>
+    <p>In backend, la tratarea cererii de "login", se adauga proprietatea de "rol", specificand cea de "admin". Astfel, din acelasi formular de login, dar cu date specifice de admin
+    se realizeaza redirectionarea catre pagina de admin. Acesta poate vizualiza toti utilizatorii exact ca intr-o baza de date. Poate sterge un utilizator sau sa ii editeze datele, mai putin data din campul email.
+    </p>
+    <ul><u>Tehnologii folosite: </u>
+
+        <li>Endpoint: "/api/admin/getUsers"  </li>
+        <li>Metoda: POST
+        </li>
+        <li> Justificare: pentru a incarca din baza de date in front-end datele tuturor userilor existenti in baz de date.
+        </li>
+        <li>Endpoint: "/api/admin/editUser" </li>
+        <li>Metoda: PUT</li>
+        <li>Justificare: pentru a permite editarea unui utilizator de catre admin.
+        </li>
+        <li>Endpoint: "/api/admin/deleteUser" </li>
+        <li>Metoda: DELETE</li>
+        <li>Justificare: pentru a sterge utilizatori din frontend si totodata din baza de date.
+        </li>
+    </ul>
+
+
 </section>
 <h2>Alte cerinte nonfunctionale</h2>
 <h3>Cerinte de securitate</h3>
@@ -260,6 +307,7 @@
 
 <h3>Videoclip prezentare proiect</h3>
 <p><a href="https://we.tl/t-TTBnRhdR4F">Click here to download</a>
+<p>+ videoclip TW_admin.mp4</p>
 
 </body>
 </html>
